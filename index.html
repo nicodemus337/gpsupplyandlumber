@@ -2,42 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>G&P Supply & Lumber</title>
+  <title>Gonsoulin & Price — Supply & Lumber</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="favicon.ico">
+  <meta name="description" content="Gonsoulin & Price Supply & Lumber — Generations Rooted in Service and Supply." />
+  <meta property="og:title" content="Gonsoulin & Price — Supply & Lumber" />
+  <meta property="og:description" content="Generations Rooted in Service and Supply." />
+  <meta property="og:type" content="website" />
   <style>
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 3rem;
-      background: #f9f7f4;
-      color: #222;
+    :root{
+      --ink:#18332f;        /* deep green from logo */
+      --paper:#f8f6f2;      /* warm off-white */
+      --ink-soft:#385a53;
+      --accent:#bd8c3a;     /* subtle brass/gold accent for hovers */
+      --max:1040px;
     }
-    header {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #2d241f;
-      margin-bottom: 0.5rem;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--ink); background:var(--paper);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    main {
-      max-width: 700px;
-      line-height: 1.6;
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:14px}
+    .brand img{height:56px; width:auto; display:block}
+    .brand h1{font-size:1.1rem; letter-spacing:.06em; margin:0; text-transform:uppercase}
+    nav{display:flex; gap:18px; font-weight:600; font-size:.95rem}
+    nav a{opacity:.9}
+    nav a:hover{opacity:1; color:var(--accent)}
+    .hero{
+      text-align:center; padding:56px 20px 40px;
+      display:grid; place-items:center;
     }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #777;
+    .hero img{width:min(360px,70vw); height:auto; filter: drop-shadow(0 6px 18px rgba(0,0,0,.05))}
+    .slogan{
+      margin-top:18px; font-size:1.35rem; line-height:1.4; font-weight:650; letter-spacing:.02em;
+    }
+    .cta{margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center}
+    .btn{
+      padding:12px 16px; border:2px solid var(--ink); border-radius:999px; font-weight:700;
+      background:#fff; transition:.2s transform ease, .2s background ease, .2s color ease, .2s border-color ease;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:var(--accent); color:#000}
+    .btn.solid{background:var(--ink); color:#fff}
+    .btn.solid:hover{background:var(--ink-soft); border-color:var(--ink-soft)}
+    .grid{
+      display:grid; gap:18px; margin:42px auto 24px; max-width:var(--max);
+      grid-template-columns:repeat(12,1fr);
+    }
+    .card{
+      grid-column: span 12; background:#fff; border:1px solid rgba(0,0,0,.08);
+      border-radius:16px; padding:22px 20px; box-shadow:0 2px 10px rgba(0,0,0,.04);
+    }
+    .card h3{margin:0 0 6px; font-size:1.1rem}
+    .card p{margin:0; opacity:.9}
+    @media (min-width:760px){
+      .card{grid-column: span 4; padding:24px}
+      .slogan{font-size:1.6rem}
+      .brand img{height:64px}
+    }
+    footer{border-top:1px solid rgba(0,0,0,.08); margin-top:40px}
+    .foot{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      padding:18px 0; font-size:.95rem; opacity:.85;
     }
   </style>
 </head>
 <body>
-  <header>G&P Supply & Lumber</header>
-  <main>
-    <p>Serving builders, farmers, and families across South Louisiana.</p>
-    <p>Come by for lumber, hardware, and good advice — we’ve got it all under one roof.</p>
-  </main>
-  <footer>
-    <p>&copy; 2025 G&P Supply Co. — Built with pride in Loreauville, LA.</p>
-  </footer>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/">
+        <img src="images/gp-logo.png" alt="Gonsoulin & Price Supply & Lumber logo" />
+        <h1>Gonsoulin &amp; Price<br>Supply &amp; Lumber</h1>
+      </a>
+      <nav>
+        <a href="#lumber">Lumber</a>
+        <a href="#hardware">Hardware</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="home">
+      <img src="images/gp-logo.png" alt="Gonsoulin & Price sawblade logo">
+      <div class="slogan">“Generations Rooted in Service and Supply”</div>
+      <div class="cta">
+        <!-- Replace tel and maps link with your real number/address -->
+        <a class="btn solid" href="tel:+1-000-000-0000">Call the Desk</a>
+        <a class="btn" href="https://maps.google.com/?q=Gonsoulin+%26+Price+Supply+%26+Lumber" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card" id="lumber">
+        <h3>Lumber Yard</h3>
+        <p>Framing, treated, plywood, roofing tin. If we don’t have it, we’ll source it fast.</p>
+      </div>
+      <div class="card" id="hardware">
+        <h3>Hardware</h3>
+        <p>Fasteners, hand &amp; power tools, plumbing &amp; electrical essentials — the everyday kit that keeps jobs moving.</p>
+      </div>
+      <div class="card" id="services">
+        <h3>Services</h3>
+        <p>Special orders, local delivery, contractor accounts, and straight talk at the counter.</p>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="foot">
+        <div>&copy; <span id="y"></span> Gonsoulin &amp; Price Supply &amp; Lumber</div>
+        <div>Local since 1935 • Loreauville, LA</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // auto-year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
