@@ -9,21 +9,20 @@
   <link rel="icon" href="favicon.ico">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container topbar">
-      <a class="brand" href="index.html">
-        <img class="brand__logo" src="images/gp-logo.png" alt="Gonsoulin & Price Supply & Lumber logo">
-        <h1 class="brand__title">Gonsoulin &amp; Price<br>Supply &amp; Lumber</h1>
-      </a>
-      <nav class="nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="services.html" aria-current="page">Services</a>
-        <a href="index.html#lumber">Lumber</a>
-        <a href="index.html#hardware">Hardware</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+ <header class="site-header">
+  <div class="container topbar">
+    <a class="brand" href="index.html">
+      <img class="brand__logo" src="images/gp-logo.png" alt="Gonsoulin & Price Supply & Lumber logo">
+      <h1 class="brand__title">Gonsoulin &amp; Price<br>Supply &amp; Lumber</h1>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="services.html" aria-current="page">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <main>
     <section class="hero">
@@ -60,4 +59,33 @@
         <span class="tag">Panel saw</span> <span class="tag">Trim cuts</span>
       </article>
 
-      <article clas
+      <article class="card" id="keys">
+        <h3>Key Cutting</h3>
+        <p>Standard house and padlock keys, while you wait. Specialty blanks on request.</p>
+        <span class="tag">Most major blanks</span>
+      </article>
+
+      <article class="card" id="advice">
+        <h3>Counter Advice</h3>
+        <p>Explain the problem; we’ll spec parts and steps. Ranch fixes, home repairs, shop builds — we’ve seen it.</p>
+        <span class="tag">No upsell</span> <span class="tag">Plain talk</span>
+      </article>
+    </section>
+
+    <section class="container cta" style="margin-top:8px">
+      <a class="btn btn--solid" href="tel:+1-000-000-0000">Call Now</a>
+      <a class="btn" href="mailto:orders@gpsupplyandlumber.com">Send a PO</a>
+      <a class="btn" href="https://maps.google.com/?q=Gonsoulin+%26+Price+Supply+%26+Lumber" target="_blank" rel="noopener">Directions</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <div>&copy; <span id="y"></span> Gonsoulin &amp; Price Supply &amp; Lumber</div>
+      <div>Local since 1935 • Loreauville, LA</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
