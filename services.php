@@ -6,24 +6,9 @@ $META = [
   'image' => '/images/gp-logo.png'
 ];
 require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/nav.php';
 ?>
 <main>
-  <header class="site-header">
-    <div class="container topbar">
-      <a class="brand" href="index.php">
-        <img class="brand__logo" src="images/gp-logo.png" alt="Gonsoulin & Price Supply & Lumber logo">
-        <h1 class="brand__title">Gonsoulin &amp; Price<br>Supply &amp; Lumber</h1>
-      </a>
-
-      <nav class="nav" aria-label="Main">
-        <a href="index.php">Home</a>
-        <a href="services.php" aria-current="page">Services</a>
-        <a href="about.php">About</a>
-        <a href="contact.php">Contact</a>
-      </nav>
-    </div>
-  </header>
-
   <section class="container grid" id="services">
     <article class="card">
       <h3>Special Orders</h3>
@@ -53,18 +38,4 @@ require_once __DIR__ . '/includes/header.php';
     <a class="btn" href="https://maps.google.com/?q=Gonsoulin+%26+Price+Supply+%26+Lumber" target="_blank" rel="noopener">Directions</a>
   </section>
 </main>
-
-<footer class="site-footer">
-  <div class="container foot">
-    <div>&copy; <span id="y"></span> Gonsoulin &amp; Price Supply &amp; Lumber</div>
-    <nav class="nav">
-      <a href="services.php" aria-current="page">Services</a>
-      <a href="about.php">About</a>
-      <a href="contact.php">Contact</a>
-    </nav>
-  </div>
-</footer>
-
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body>
-</html>
+<?php require_once __DIR__ . '/footer.php'; ?>

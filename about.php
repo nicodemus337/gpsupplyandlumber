@@ -6,24 +6,9 @@ $META = [
   'image' => '/images/gp-logo.png'
 ];
 require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/nav.php';
 ?>
 <main>
-  <header class="site-header">
-    <div class="container topbar">
-      <a class="brand" href="index.php">
-        <img class="brand__logo" src="images/gp-logo.png" alt="Gonsoulin & Price Supply & Lumber logo">
-        <h1 class="brand__title">Gonsoulin &amp; Price<br>Supply &amp; Lumber</h1>
-      </a>
-
-      <nav class="nav" aria-label="Main">
-        <a href="index.php">Home</a>
-        <a href="services.php">Services</a>
-        <a href="about.php" aria-current="page">About</a>
-        <a href="contact.php">Contact</a>
-      </nav>
-    </div>
-  </header>
-
   <section class="container">
     <h2>Our Story</h2>
     <p>We’re a continuation of a simple promise: Loreauville will always have a locally owned hardware and lumber store. New name, same mission — stock what the community needs and help you finish the job.</p>
@@ -46,18 +31,4 @@ require_once __DIR__ . '/includes/header.php';
     </article>
   </section>
 </main>
-
-<footer class="site-footer">
-  <div class="container foot">
-    <div>&copy; <span id="y"></span> Gonsoulin &amp; Price Supply &amp; Lumber</div>
-    <nav class="nav">
-      <a href="services.php">Services</a>
-      <a href="about.php" aria-current="page">About</a>
-      <a href="contact.php">Contact</a>
-    </nav>
-  </div>
-</footer>
-
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body>
-</html>
+<?php require_once __DIR__ . '/footer.php'; ?>

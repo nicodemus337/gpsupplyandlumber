@@ -6,6 +6,7 @@ $META = [
   'image' => '/images/gp-logo.png'
 ];
 require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/nav.php';
 ?>
 <main>
   <section class="hero" id="home">
@@ -39,20 +40,4 @@ require_once __DIR__ . '/includes/header.php';
     <a class="btn" href="https://maps.google.com/?q=Gonsoulin+%26+Price+Supply+%26+Lumber" target="_blank" rel="noopener">Directions</a>
   </section>
 </main>
-
-<footer class="site-footer">
-  <div class="container foot">
-    <div>&copy; <span id="y"></span> Gonsoulin &amp; Price Supply &amp; Lumber</div>
-    <nav class="nav">
-      <a href="services.php">Services</a>
-      <a href="about.php">About</a>
-      <a href="contact.php">Contact</a>
-    </nav>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
+<?php require_once __DIR__ . '/footer.php'; ?>
