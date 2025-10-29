@@ -1,4 +1,4 @@
-# --- FILE: /includes/header.php
+
 <?php
 $GLOBALS['SITE'] = [
   'brand'        => 'G&P Supply Co',
