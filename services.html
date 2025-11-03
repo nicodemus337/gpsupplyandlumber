@@ -12,13 +12,10 @@
 <body>
 <header class="site-header">
 <nav class="nav">
-<a href="index.html" class="brand">
-<img src="images/gp-logo.png" alt="GP Supply & Lumber" class="brand-mark"/>
-<span class="brand-text">GP Supply & Lumber</span>
-</a>
+<a href="index.html" class="brand"><img src="images/gp-logo.png" alt="GP Supply & Lumber" class="brand-mark"/></a>
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
-<li><a href="services.html">Services</a></li>
+<li><a href="services.html" class="active">Services</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
@@ -26,9 +23,10 @@
 </header>
 
 
-<main class="content">
-<h1>Services</h1>
-<ul class="service-list">
+<main class="section">
+<div class="container narrow">
+<h1 class="display-sm">Services</h1>
+<ul class="list-plain">
 <li><strong>Lumber & Panel Supply</strong> — studs, treated, sheet goods.</li>
 <li><strong>Hardware & Fasteners</strong> — anchors, brackets, structural.</li>
 <li><strong>Tools & Equipment</strong> — hand/power tools, accessories.</li>
@@ -38,25 +36,28 @@
 </ul>
 
 
-<section class="module paladin">
-<h2>Live Inventory — Coming Soon</h2>
+<div class="rule"></div>
+
+
+<section class="module paladin flat">
+<h2 class="kicker">Live Inventory — Coming Soon</h2>
 <p>We’re integrating Paladin POS to display in‑stock items and pricing online. Until then, call <a href="tel:13372294224">337‑229‑4224</a> or email <a href="mailto:gpsupplyandlumber@gmail.com">gpsupplyandlumber@gmail.com</a> for a quick quote.</p>
 <form class="inline-form">
 <input type="text" placeholder="Part/SKU (e.g., Simpson H2.5A)" aria-label="SKU" />
 <input type="text" placeholder="Quantity" aria-label="Quantity" />
-<button type="submit" class="btn">Request Quote</button>
+<button type="submit" class="btn-link">Request quote</button>
 </form>
-<small class="note">This form can be wired to email now and to Paladin’s API later.</small>
+<small class="note">This form can email now and connect to Paladin’s API later.</small>
 </section>
+</div>
 </main>
 
 
-<footer>
-<p>© <span id="y"></span> GP Supply & Lumber • 700 N Main St, Loreauville LA 70552 • <a href="tel:13372294224">337-229-4224</a> • <a href="mailto:gpsupplyandlumber@gmail.com">gpsupplyandlumber@gmail.com</a></p>
-<p class="social-links">
-<a href="https://instagram.com/gpsupplyandlumber" target="_blank" rel="noopener">Instagram</a> ·
-<a href="https://facebook.com/gpsupplyandlumber" target="_blank" rel="noopener">Facebook</a>
-</p>
+<footer class="site-footer">
+<div class="container narrow">
+<p class="foot-line">© <span id="y"></span> GP Supply & Lumber • 700 N Main St, Loreauville LA 70552 • <a href="tel:13372294224">337‑229‑4224</a> • <a href="mailto:gpsupplyandlumber@gmail.com">gpsupplyandlumber@gmail.com</a></p>
+<p class="social-links"><a href="https://instagram.com/gpsupplyandlumber" target="_blank" rel="noopener">Instagram</a> · <a href="https://facebook.com/gpsupplyandlumber" target="_blank" rel="noopener">Facebook</a></p>
+</div>
 </footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>

@@ -1,60 +1,70 @@
-/* ===== GP Supply & Lumber — identity v1 ===== */
---steel:#3a3f46; /* saw-steel */
---max:1040px;
+/* ===== GP Supply & Lumber — v4 typographic/minimal ===== */
+:root{
+--ink:#111; /* near-black text */
+--paper:#fff; /* white background */
+--muted:#6b7280; /* gray for ledes */
+--rule:#e5e7eb; /* hairline */
+--accent:#bd8c3a; /* brass */
+--max:1200px;
+--narrow:860px;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{
-margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", sans-serif;
-color:var(--ink); background:var(--paper);
--webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-/* subtle heritage paper texture (SVG noise) */
-background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='table' tableValues='0 0 0 0.015'/></feComponentTransfer></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-}
-img{max-width:100%; height:auto; display:block}
-a{color:inherit; text-decoration:none}
+body{margin:0; color:var(--ink); background:var(--paper); -webkit-font-smoothing:antialiased;}
 
 
-/* Header / Nav */
-.site-header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.1) blur(6px);}
-.nav{max-width:var(--max); margin:0 auto; padding:12px 24px; display:flex; align-items:center; justify-content:space-between; background:color-mix(in srgb, var(--paper) 86%, #fff 14%); border-bottom:1px solid var(--line)}
-.brand{display:flex; align-items:center; gap:12px}
-.brand-mark{height:44px; width:auto; filter: drop-shadow(0 1px 0 rgba(0,0,0,.04));}
-.brand-text{font-weight:800; letter-spacing:.25px}
+/* Typography */
+body{font: 16px/1.7 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif;}
+h1,h2,h3{font-family: Georgia, "Times New Roman", Times, serif; font-weight:700; letter-spacing:.2px}
+.display{font-size:clamp(34px,6vw,64px); line-height:1.08; margin:0 0 10px}
+.display-sm{font-size:clamp(28px,5vw,44px); line-height:1.1; margin:0 0 10px}
+.lede{color:var(--muted)}
+.kicker{font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:#374151; margin:28px 0 8px}
+
+
+/* Layout helpers */
+.container{max-width:var(--max); margin:0 auto; padding:0 24px}
+.narrow{max-width:var(--narrow)}
+.section{padding:64px 0}
+.rule{height:1px; background:var(--rule); margin:32px 0}
+.grid{display:grid; gap:28px}
+.grid.thirds{grid-template-columns: repeat(1,1fr)}
+@media (min-width:900px){ .grid.thirds{grid-template-columns:repeat(3,1fr)} }
+.grid.two{grid-template-columns:1fr}
+@media (min-width:900px){ .grid.two{grid-template-columns:1.1fr .9fr} }
+
+
+/* Header */
+.site-header{position:sticky; top:0; z-index:40; background:rgba(255,255,255,.92); backdrop-filter:saturate(1.1) blur(6px); border-bottom:1px solid var(--rule)}
+.nav{max-width:var(--max); margin:0 auto; padding:10px 24px; display:flex; align-items:center; justify-content:space-between}
+.brand-mark{height:44px; width:auto}
 .nav-links{list-style:none; display:flex; gap:22px; margin:0; padding:0}
-.nav-links a{padding:6px 2px; border-bottom:2px solid transparent}
-.nav-links a:hover{border-color:var(--accent)}
-.active{border-bottom:2px solid var(--accent)}
+.nav-links a{font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:#111; padding:10px 2px; position:relative}
+.nav-links a::after{content:""; position:absolute; left:0; right:0; bottom:6px; height:1px; background:transparent; transition:background .2s ease}
+.nav-links a:hover::after{background:var(--ink)}
+.active{border-bottom:1px solid var(--ink)}
 
 
 /* Hero */
-.hero{max-width:var(--max); margin:0 auto; padding:80px 24px; text-align:center}
-.hero h1{font-size:clamp(28px,4vw,44px); margin:0 0 8px}
-.slogan{color:var(--ink-soft); font-style:italic; margin:6px 0 18px}
-.btn{padding:10px 18px; background:var(--accent); color:#fff; border-radius:10px; display:inline-block; font-weight:700; letter-spacing:.3px; box-shadow:0 6px 14px rgba(0,0,0,.08)}
-.btn:hover{filter:brightness(1.05)}
+.hero-minimal{padding:80px 0 48px}
+.btn-link{font-weight:700; text-underline-offset:3px; color:#111; border-bottom:2px solid var(--ink); padding-bottom:2px}
+.btn-link:hover{opacity:.85}
 
 
-/* Sections */
-.features{max-width:var(--max); margin:0 auto; padding:40px 24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px}
-.features div{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; box-shadow:0 10px 24px rgba(0,0,0,.04)}
+/* Lists */
+.list-plain{list-style:none; padding:0; margin:0}
+.list-plain li{margin:10px 0}
 
 
-.content{max-width:var(--max); margin:0 auto; padding:40px 24px}
-.service-list{line-height:1.85}
-.module.paladin{margin-top:28px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; box-shadow:0 10px 24px rgba(0,0,0,.04)}
-.inline-form{display:flex; gap:10px; margin-top:12px}
-.inline-form input{flex:1; padding:10px; border:1px solid var(--line); border-radius:10px; background:#fff}
-.inline-form .btn{flex:0 0 auto}
-.note{color:#666}
-
-
-/* Contact */
-.contact-grid{display:grid; grid-template-columns:1fr; gap:18px}
-@media (min-width:880px){ .contact-grid{grid-template-columns:1.1fr 1fr} }
-.hours{line-height:1.8}
-.contact-form input,.contact-form textarea{width:100%; padding:10px; margin-bottom:10px; border:1px solid var(--line); border-radius:10px; background:#fff}
+/* Forms / Map */
+.inline-form{display:flex; gap:10px; flex-wrap:wrap}
+.inline-form input{flex:1 1 220px; padding:10px; border:1px solid var(--rule)}
+.contact-form input,.contact-form textarea{width:100%; padding:10px; border:1px solid var(--rule); margin-bottom:10px}
+.map-frame{border:1px solid var(--rule)}
 
 
 /* Footer */
-footer{max-width:var(--max); margin:0 auto; padding:20px 24px; color:#3b3b3b; text-align:center}
+.site-footer{border-top:1px solid var(--rule); padding:28px 0}
+.foot-line{color:#374151}
+.social-links a{color:#111}
+.social-links a:hover{opacity:.85}
