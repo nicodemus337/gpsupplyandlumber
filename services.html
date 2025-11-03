@@ -5,13 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Services | GP Supply & Lumber</title>
 <link rel="stylesheet" href="style.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-192.png">
 </head>
 <body>
 <header class="site-header">
-<nav>
-<a href="index.html" class="logo">GP Supply & Lumber</a>
-<ul>
-<li><a href="services.html" class="active">Services</a></li>
+<nav class="nav">
+<a href="index.html" class="brand">
+<img src="images/gp-logo.png" alt="GP Supply & Lumber" class="brand-mark"/>
+<span class="brand-text">GP Supply & Lumber</span>
+</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
@@ -46,6 +53,10 @@
 
 <footer>
 <p>© <span id="y"></span> GP Supply & Lumber • 700 N Main St, Loreauville LA 70552 • <a href="tel:13372294224">337-229-4224</a> • <a href="mailto:gpsupplyandlumber@gmail.com">gpsupplyandlumber@gmail.com</a></p>
+<p class="social-links">
+<a href="https://instagram.com/gpsupplyandlumber" target="_blank" rel="noopener">Instagram</a> ·
+<a href="https://facebook.com/gpsupplyandlumber" target="_blank" rel="noopener">Facebook</a>
+</p>
 </footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>

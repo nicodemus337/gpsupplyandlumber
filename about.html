@@ -5,14 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>About | GP Supply & Lumber</title>
 <link rel="stylesheet" href="style.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-192.png">
 </head>
 <body>
 <header class="site-header">
-<nav>
-<a href="index.html" class="logo">GP Supply & Lumber</a>
-<ul>
+<nav class="nav">
+<a href="index.html" class="brand">
+<img src="images/gp-logo.png" alt="GP Supply & Lumber" class="brand-mark"/>
+<span class="brand-text">GP Supply & Lumber</span>
+</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
 <li><a href="services.html">Services</a></li>
-<li><a href="about.html" class="active">About</a></li>
+<li><a href="about.html">About</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
@@ -29,9 +36,7 @@
 
 
 <h3>Shannon Gonsoulin, DVM — Co‑Owner</h3>
-<p>Dr. Shannon (“Doc”) Gonsoulin has been around animals and hard work his entire life. Raised around horses, he entered rodeo competitions to help pay for college, eventually earning his Doctor of Veterinary Medicine degree. He and his wife, Toni, built four successful veterinary clinics while raising their four children.</p>
-<p>Rooted deeply in Acadiana, Doc descends from Jean Francois de Beaumelle Gonsoulin, who arrived from France in 1770 and registered the historic F2 cattle brand. Inspired by that legacy, he established a grass‑fed beef operation on his family land in Loreauville, continuing a centuries‑long Gonsoulin tradition of stewardship, livestock, and local service.</p>
-<p>Today, Doc brings that same grit and pride to GP Supply & Lumber — focused on serving builders, ranchers, and families with the same dedication his family has carried for generations.</p>
+<p class="bio-short">Doc is a veterinarian, rancher, and lifelong hand with animals. He rodeoed to help pay for school, built multiple vet clinics with his wife, Toni, and now brings that same grit to serving local builders and families. Rooted in the 1770s Gonsoulin lineage, he works to carry a practical legacy forward in Loreauville.</p>
 
 
 <h3>— Mr. Price — Co‑Owner</h3>
@@ -41,6 +46,10 @@
 
 <footer>
 <p>© <span id="y"></span> GP Supply & Lumber • 700 N Main St, Loreauville LA 70552 • <a href="tel:13372294224">337-229-4224</a> • <a href="mailto:gpsupplyandlumber@gmail.com">gpsupplyandlumber@gmail.com</a></p>
+<p class="social-links">
+<a href="https://instagram.com/gpsupplyandlumber" target="_blank" rel="noopener">Instagram</a> ·
+<a href="https://facebook.com/gpsupplyandlumber" target="_blank" rel="noopener">Facebook</a>
+</p>
 </footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
