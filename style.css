@@ -45,7 +45,6 @@ body::before {
   inset: 0;
   background: url("../images/end-grain-texture.JPG") center/cover no-repeat;
   opacity: 1;
-  filter: brightness(0.25) contrast(1.45);
   z-index: -1;
   pointer-events: none;
 }
