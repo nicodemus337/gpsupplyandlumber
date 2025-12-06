@@ -1,6 +1,6 @@
-/* ============================================
-   TOKENS — COLOR SYSTEM (NO RED)
-   ============================================ */
+/* ===========================================================
+   TOKENS — COLOR SYSTEM
+   =========================================================== */
 :root {
   --gp-green: #3e7f3e;
   --gp-green-dark: #2c5b2c;
@@ -16,14 +16,14 @@
   --gp-radius-lg: 24px;
   --gp-radius-pill: 999px;
 
-  --gp-shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
+  --gp-shadow-soft: 0 10px 24px rgba(0,0,0,0.08);
   --gp-max-width: 1120px;
   --gp-gutter: 1.5rem;
 }
 
-/* ============================================
+/* ===========================================================
    BASE + GLOBAL TEXTURE
-   ============================================ */
+   =========================================================== */
 *,
 *::before,
 *::after {
@@ -44,15 +44,11 @@ body::before {
   position: fixed;
   inset: 0;
   background: url("../images/end-grain-texture.JPG") center/cover no-repeat;
-  
-  /* much darker + richer */
-  opacity: 0.45;
-  filter: brightness(0.35) contrast(1.35);
-
+  opacity: 1;
+  filter: brightness(0.25) contrast(1.45);
   z-index: -1;
   pointer-events: none;
 }
-
 
 img {
   max-width: 100%;
@@ -70,18 +66,17 @@ a {
   padding: 0 var(--gp-gutter);
 }
 
-/* ============================================
-   HEADER
-   ============================================ */
-/* Full-width header container */
+/* ===========================================================
+   HEADER — DESKTOP LAYOUT
+   =========================================================== */
 .gp-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   background: var(--gp-green);
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
 }
-/* Left + right alignment */
+
 .gp-header-bar {
   display: flex;
   align-items: center;
@@ -89,87 +84,66 @@ a {
   padding: 0.45rem 0;
 }
 
-.gp-nav {
+/* LEFT SIDE: LOGO + BRAND TEXT */
+.gp-header-left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 0;
+  gap: 0.65rem;
 }
 
-.gp-nav a {
-  color: #ffffff !important;
-}
-
-.gp-brand-text span:last-child {
-  color: rgba(255,255,255,0.75) !important;
-}
-
-.gp-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-/* LOGO — WHITE TRANSPARENT LOGO SUPPORT */
 .gp-logo-mark {
-  width: 78px;
-  height: 78px;
-  border-radius: 24px;
-
-  background: linear-gradient(135deg, #dfe3df, #c8cdc8);
-  border: 2px solid var(--gp-green);
-
-  box-shadow:
-    inset 0 2px 4px rgba(0,0,0,0.3),
-    0 4px 10px rgba(0,0,0,0.15);
-
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.45);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
 }
 
 .gp-logo-mark img {
-  width: 82%;
+  width: 80%;
   height: auto;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
 }
 
-.gp-brand-text span:first-child {
+.gp-brand-title {
   font-family: "Roboto Slab", serif;
+  font-size: 1.05rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  font-size: 1.12rem;
+  color: #fff;
 }
 
-.gp-brand-text span:last-child {
-  font-size: 0.9rem;
-  color: #555;
+.gp-brand-sub {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: -2px;
 }
 
-/* NAV LINKS */
+/* RIGHT SIDE: NAV LINKS */
 .gp-nav-links {
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  font-size: 0.92rem;
+  gap: 1.75rem;
 }
 
 .gp-nav-links a {
+  color: #fff;
+  font-size: 0.95rem;
   position: relative;
-  display: inline-block;
   padding-bottom: 2px;
 }
 
-.gp-nav-links a:not(.gp-nav-cta)::after {
+.gp-nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: -3px;
   width: 0;
   height: 2px;
-  border-radius: var(--gp-radius-pill);
-  background: var(--gp-green);
+  background: var(--gp-yellow);
+  border-radius: 999px;
   transition: width 0.2s ease-out;
 }
 
@@ -177,69 +151,135 @@ a {
   width: 100%;
 }
 
+/* ===========================================================
+   MOBILE HEADER (HAMBURGER + SLIDE-DOWN MENU)
+   =========================================================== */
+.gp-hamburger {
+  display: none;
+  cursor: pointer;
+  width: 28px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-/* ============================================
-   HERO
-   ============================================ */
+.gp-hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Slide-down mobile nav */
+.gp-mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--gp-green-dark);
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+}
+
+.gp-mobile-nav a {
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+/* Hamburger open state */
+.mobile-open .gp-mobile-nav {
+  display: flex;
+}
+
+.mobile-open .gp-hamburger span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.mobile-open .gp-hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-open .gp-hamburger span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===========================================================
+   RESPONSIVE BREAKPOINT
+   =========================================================== */
+@media (max-width: 780px) {
+
+  .gp-nav-links {
+    display: none;
+  }
+
+  .gp-hamburger {
+    display: flex;
+  }
+
+  .gp-header-bar {
+    padding: 0.65rem 0;
+  }
+
+  .gp-brand-title {
+    font-size: 0.95rem;
+  }
+
+  .gp-brand-sub {
+    font-size: 0.72rem;
+  }
+}
+
+/* ===========================================================
+   HERO SECTION
+   =========================================================== */
 .gp-hero {
-  padding: 3rem 0 2.5rem;
+  padding: 4rem 0 2.75rem;
 }
 
 .gp-hero-shell {
   display: grid;
   gap: 2rem;
   grid-template-columns: 3fr 2.4fr;
-  padding: 2.25rem;
-  border-radius: var(--gp-radius-lg);
   background: rgba(255,255,255,0.92);
+  padding: 2.3rem;
+  border-radius: var(--gp-radius-lg);
   box-shadow: var(--gp-shadow-soft);
-  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .gp-hero h1 {
+  margin: 0;
   font-family: "Roboto Slab", serif;
   font-size: 2.4rem;
-  margin-top: 0;
 }
 
 .gp-hero h1 span {
   color: var(--gp-green);
 }
 
-.gp-hero p {
-  margin-bottom: 0.8rem;
-}
-
-/* BUTTON SYSTEM — Full Green */
-.gp-button-primary {
-  padding: 0.6rem 1.3rem;
-  border-radius: var(--gp-radius-pill);
-  background: var(--gp-green);
-  border: 1px solid var(--gp-green-dark);
-  color: #fff;
-  font-weight: 500;
-  display: inline-block;
-}
-
-.gp-button-primary:hover {
-  background: var(--gp-green-dark);
-  box-shadow: 0 0 0 3px rgba(245,196,65,0.35);
-}
-
+.gp-button-primary,
 .gp-button-secondary {
   padding: 0.6rem 1.3rem;
   border-radius: var(--gp-radius-pill);
-  background: #fff;
-  border: 1px solid var(--gp-gray-light);
+  font-size: 0.95rem;
   display: inline-block;
 }
 
-/* HERO PHOTO — Jan in Warehouse */
+.gp-button-primary {
+  background: var(--gp-green);
+  border: 1px solid var(--gp-green-dark);
+  color: #fff;
+}
+.gp-button-primary:hover {
+  background: var(--gp-green-dark);
+}
+
+.gp-button-secondary {
+  background: #fff;
+  border: 1px solid var(--gp-gray-light);
+}
+
 .gp-hero-photo {
-  position: relative;
   border-radius: 20px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
   overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
 .gp-hero-photo img {
@@ -250,8 +290,8 @@ a {
 
 .gp-hero-tag {
   position: absolute;
-  left: 12px;
   bottom: 12px;
+  left: 12px;
   background: rgba(33,33,33,0.85);
   color: white;
   padding: 0.4rem 0.8rem;
@@ -259,28 +299,93 @@ a {
   font-size: 0.78rem;
 }
 
-/* ============================================
+/* MOBILE HERO */
+@media (max-width: 780px) {
+  .gp-hero-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================================
    HERITAGE STRIP
-   ============================================ */
+   =========================================================== */
 .gp-heritage {
-  padding: 2.5rem 0;
+  padding: 2.8rem 0;
 }
 
 .gp-heritage-shell {
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: 1fr 1fr;
   background: var(--gp-cream-soft);
-  padding: 1.5rem;
   border-radius: var(--gp-radius-lg);
-  border: 1px solid var(--gp-gray-light);
+  padding: 1.8rem;
+  box-shadow: var(--gp-shadow-soft);
+  border: 1px solid rgba(0,0,0,0.08);
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: 1fr 1fr;
 }
 
-/* ============================================
+@media (max-width: 780px) {
+  .gp-heritage-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================================
+   IDENTITY STRIP
+   =========================================================== */
+.gp-identity-strip {
+  padding: 3rem 0 2rem;
+}
+
+.gp-identity-heading {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.gp-identity-grid {
+  background: rgba(255,255,255,0.92);
+  border-radius: var(--gp-radius-lg);
+  padding: 1.8rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: var(--gp-shadow-soft);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.identity-photo {
+  background: #fff;
+  border: 1px solid var(--gp-gray-light);
+  border-radius: var(--gp-radius-soft);
+  padding: 0.75rem;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.identity-photo img {
+  border-radius: var(--gp-radius-soft);
+}
+
+.identity-caption {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+  color: #5a534a;
+  font-weight: 500;
+}
+
+@media (max-width: 780px) {
+  .gp-identity-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================================
    SERVICES
-   ============================================ */
+   =========================================================== */
 .gp-services {
-  padding: 2.75rem 0 2.5rem;
+  padding: 2.8rem 0;
 }
 
 .gp-services-grid {
@@ -290,106 +395,40 @@ a {
 }
 
 .gp-service-card {
-  background: #ffffffdd;
+  background: #ffffffee;
+  padding: 1.3rem;
   border-radius: var(--gp-radius-soft);
   border: 1px solid rgba(0,0,0,0.05);
-  padding: 1.1rem;
   box-shadow: var(--gp-shadow-soft);
 }
 
-/* ============================================
+@media (max-width: 780px) {
+  .gp-services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================================
    CONTACT
-   ============================================ */
+   =========================================================== */
 .gp-contact {
-  padding: 2.5rem 0 2.75rem;
+  padding: 2.8rem 0 3rem;
 }
 
 .gp-contact-shell {
   background: rgba(255,255,255,0.96);
   border-radius: var(--gp-radius-lg);
-  padding: 1.9rem;
-  border: 1px solid rgba(0,0,0,0.06);
+  padding: 2rem;
+  border: 1px solid rgba(0,0,0,0.08);
   box-shadow: var(--gp-shadow-soft);
 }
 
-/* ============================================
+/* ===========================================================
    FOOTER
-   ============================================ */
+   =========================================================== */
 .gp-footer {
-  padding: 1.4rem 0 1.8rem;
+  text-align: center;
+  padding: 1.5rem 0 2rem;
   background: #1e1b17;
   color: var(--gp-cream);
-  text-align: center;
-}
-
-/* ============================================
-   IDENTITY STRIP — Time Narrative Section
-   ============================================ */
-.gp-identity-strip {
-  padding: 3rem 0 2rem;
-}
-
-.gp-identity-heading {
-  font-family: "Roboto Slab", serif;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--gp-charcoal);
-  text-align: center;
-}
-
-.gp-identity-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  background: rgba(255,255,255,0.9);
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: var(--gp-radius-lg);
-  padding: 1.8rem;
-  box-shadow: var(--gp-shadow-soft);
-  position: relative;
-}
-
-.identity-future.hidden {
-  display: none;
-}
-
-.identity-photo {
-  background: #fff;
-  border-radius: var(--gp-radius-soft);
-  padding: 0.75rem;
-  border: 1px solid var(--gp-gray-light);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-  text-align: center;
-}
-
-.identity-photo img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--gp-radius-soft);
-}
-
-.identity-caption {
-  margin-top: 0.5rem;
-  font-size: 0.88rem;
-  color: #554f46;
-  font-weight: 500;
-}
-
-/* Mobile */
-@media (max-width: 800px) {
-  .gp-hero-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .gp-heritage-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .gp-services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gp-identity-grid {
-    grid-template-columns: 1fr;
-  }
 }
