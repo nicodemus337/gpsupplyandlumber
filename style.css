@@ -73,14 +73,21 @@ a {
 /* ============================================
    HEADER
    ============================================ */
+/* Full-width header container */
 .gp-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--gp-green); /* dark green */
+  background: var(--gp-green);
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
-
+/* Left + right alignment */
+.gp-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0;
+}
 
 .gp-nav {
   display: flex;
@@ -93,9 +100,6 @@ a {
   color: #ffffff !important;
 }
 
-.gp-brand-text span {
-  color: #ffffff !important;
-}
 .gp-brand-text span:last-child {
   color: rgba(255,255,255,0.75) !important;
 }

@@ -1,203 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>G&P Supply & Lumber</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — G&P Supply & Lumber</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ===============================
-       HEADER
-  =============================== -->
-  <header class="gp-header">
-    <div class="gp-shell">
-      <nav class="gp-nav">
+<header class="gp-header">
+  <div class="gp-shell gp-header-bar">
 
-        <!-- BRAND -->
-        <div class="gp-brand">
-          <div class="gp-logo-mark">
-            <img src="images/gp-logo-white.png" alt="G&P Supply Logo" />
-          </div>
-          <div class="gp-brand-text">
-            <span>G&P Supply & Lumber</span><br>
-            <span>Since 1937</span>
-          </div>
-        </div>
+    <div class="gp-header-left">
+      <div class="gp-logo-mark">
+        <img src="images/gp-logo-white.png" alt="G&P Supply Logo">
+      </div>
 
-        <!-- NAV LINKS -->
-        <div class="gp-nav-links">
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-      </nav>
-    </div>
-  </header>
-
-  <!-- ===============================
-       HERO
-  =============================== -->
-  <section class="gp-hero" id="about">
-    <div class="gp-shell">
-      <div class="gp-hero-shell">
-
-        <!-- LEFT: TEXT CONTENT -->
-        <div>
-          <h1>
-            Your Local Hardware <br>
-            <span>Since 1937</span>
-          </h1>
-          <p>
-            Generations of service, craftsmanship, and community trust.
-            G&P Supply & Lumber continues the proud heritage of local hardware
-            with the tools, materials, and know-how to get the job done right.
-          </p>
-
-          <div style="margin-top:1.2rem; display:flex; gap:1rem; flex-wrap:wrap;">
-            <a class="gp-button-primary" href="#services">View Services</a>
-            <a class="gp-button-secondary" href="#contact">Get Directions</a>
-          </div>
-        </div>
-
-        <!-- RIGHT: HERO IMAGE (JAN IN WAREHOUSE) -->
-        <div class="gp-hero-photo">
-          <img src="images/jan-warehouse.JPG" alt="Jan working in the G&P warehouse" />
-          <span class="gp-hero-tag">Inside the warehouse</span>
-        </div>
-
+      <div class="gp-brand-text">
+        <span class="gp-brand-title">G&P Supply & Lumber</span>
+        <span class="gp-brand-sub">Since 1937</span>
       </div>
     </div>
-  </section>
 
-  <!-- ===============================
-       HERITAGE STRIP
-  =============================== -->
-  <section class="gp-heritage">
-    <div class="gp-shell">
-      <div class="gp-heritage-shell">
-        <div>
-          <h3 style="font-family:'Roboto Slab', serif; margin-top:0;">
-            A Legacy Built on Service
-          </h3>
-          <p>
-            G&P has been part of the Loreauville story for nearly a century.
-            Our foundations trace back to 1937 and continue into the next generation.
-          </p>
-        </div>
+    <nav class="gp-nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
 
-        <div>
-          <p>
-            From the original storefront to today’s evolving operation, our mission
-            remains unchanged: serving the community with integrity, reliability,
-            and quality materials.
-          </p>
-        </div>
-      </div>
+    <div class="gp-hamburger" onclick="document.body.classList.toggle('mobile-open')">
+      <span></span><span></span><span></span>
     </div>
-  </section>
+  </div>
 
-  <!-- ===============================
-       TIMELINE / IDENTITY STRIP
-  =============================== -->
-  <section class="gp-identity-strip">
-    <div class="gp-shell">
+  <nav class="gp-mobile-nav">
+    <a href="index.html#services">Services</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
 
-      <h2 class="gp-identity-heading">Our Story Through Time</h2>
 
-      <div class="gp-identity-grid">
+<section class="gp-hero">
+  <div class="gp-shell">
+    <div class="gp-hero-shell">
 
-        <!-- 1937 PHOTO -->
-        <div class="identity-photo">
-          <img src="images/storefront-1937.png" alt="Original 1937 Storefront">
-          <div class="identity-caption">Storefront — 1937</div>
-        </div>
+      <div>
+        <h1>About Us</h1>
 
-        <!-- TODAY PHOTO -->
-        <div class="identity-photo">
-          <img src="images/jbs.exterior.red.JPG" alt="Present Day Storefront">
-          <div class="identity-caption">Storefront — Today</div>
-        </div>
+        <p>Since 1937, G&P Supply & Lumber has supported the people, industries,
+        and land of Acadiana. What began as a small, family-run hardware yard
+        has grown into a trusted supplier for generations.</p>
 
-        <!-- INTERIOR ENTRANCE -->
-        <div class="identity-photo">
-          <img src="images/interior.entrance.JPG" alt="Interior Entrance">
-          <div class="identity-caption">Inside the Entrance</div>
-        </div>
+        <p><strong>Industrial Supply Roots:</strong><br>
+        With over 40 years of industrial experience, we continue supplying
+        fasteners, fittings, and hardware to salt mines, sugar mills, boat
+        builders, farmers, mechanics, and fabrication yards.</p>
 
+        <p>This page will continue to grow as we archive more of the story —
+        the people, the land, and the work that built this place.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- ===============================
-       SERVICES
-  =============================== -->
-  <section id="services" class="gp-services">
-    <div class="gp-shell">
-
-      <h2 style="font-family:'Roboto Slab', serif; text-align:center; margin-bottom:1.8rem;">
-        What We Offer
-      </h2>
-
-      <div class="gp-services-grid">
-
-        <div class="gp-service-card">
-          <h4 style="margin-top:0;">Lumber & Building Materials</h4>
-          Quality lumber and supplies for every scale of project.
-        </div>
-
-        <div class="gp-service-card">
-          <h4 style="margin-top:0;">Hardware & Tools</h4>
-          A full range of dependable tools and hardware essentials.
-        </div>
-
-        <div class="gp-service-card">
-          <h4 style="margin-top:0;">Local Support</h4>
-          Expert guidance from a team rooted in the community.
-        </div>
-
+      <div class="gp-hero-photo">
+        <img src="images/jan-warehouse.JPG" alt="Jan in the warehouse">
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===============================
-       CONTACT
-  =============================== -->
-  <section id="contact" class="gp-contact">
-    <div class="gp-shell">
-      <div class="gp-contact-shell">
 
-        <h2 style="font-family:'Roboto Slab', serif; margin-top:0;">
-          Get In Touch
-        </h2>
-
-        <p>
-          Whether you need materials, advice, or special orders, our team is here to help.
-        </p>
-
-        <p><strong>Phone:</strong> (337) 213-9999</p>
-        <p><strong>Address:</strong> Loreauville, Louisiana</p>
-
-        <a class="gp-button-primary" href="tel:+13372139999">Call Now</a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================
-       FOOTER
-  =============================== -->
-  <footer class="gp-footer">
-    <div class="gp-shell">
-      © 2025 G&P Supply & Lumber — Serving Loreauville Since 1937
-    </div>
-  </footer>
+<footer class="gp-footer">
+  <div class="gp-shell">
+    © 2025 G&P Supply & Lumber — Proudly Serving Acadiana
+  </div>
+</footer>
 
 </body>
 </html>
