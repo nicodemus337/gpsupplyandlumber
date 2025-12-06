@@ -1,5 +1,5 @@
 /* =======================================================
-   TOKENS — COLOR SYSTEM + CONSTANTS
+   TOKENS — COLORS & CONSTANTS
 ========================================================= */
 :root {
   --gp-green: #3e7f3e;
@@ -45,8 +45,8 @@ body::before {
   position: fixed;
   inset: 0;
   background: url("../images/end-grain-texture.JPG") center/cover no-repeat;
-  opacity: 1;         /* no transparency */
-  filter: none;       /* remove darkening/contrast */
+  opacity: 1;
+  filter: none;
   z-index: -1;
   pointer-events: none;
 }
@@ -61,14 +61,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* =======================================================
-   HEADER — DESKTOP + MOBILE CLEAN FIX
+   HEADER
 ========================================================= */
 .gp-header {
   position: sticky;
   top: 0;
   z-index: 100;
   background: var(--gp-green);
-  border-bottom: 1px solid rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 .gp-nav {
@@ -86,18 +86,19 @@ a { color: inherit; text-decoration: none; }
 }
 
 .gp-logo-mark {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
-  background: #e8ebe7;
-  border: 2px solid var(--gp-green-dark);
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: none;
+  border: none;
+  border-radius: 0;
 }
 
 .gp-logo-mark img {
-  width: 82%;
+  width: 100%;
+  height: auto;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
 }
 
@@ -123,15 +124,14 @@ a { color: inherit; text-decoration: none; }
 
 .desktop-nav a {
   color: #ffffff;
-  position: relative;
 }
 
-/* remove stray underline entirely */
+/* Remove underline artifacts */
 .desktop-nav a::after {
   display: none;
 }
 
-/* MOBILE MENU BUTTON (HAMBURGER) */
+/* MOBILE MENU BUTTON */
 .gp-mobile-toggle {
   display: none;
   flex-direction: column;
@@ -148,7 +148,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 2px;
 }
 
-/* MOBILE MENU (HIDDEN BY DEFAULT) */
+/* MOBILE MENU */
 .gp-mobile-menu {
   display: none;
   flex-direction: column;
@@ -162,22 +162,14 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.05rem;
 }
 
-/* When menu is toggled open */
 .gp-mobile-menu.open {
   display: flex;
 }
 
-/* =======================================================
-   RESPONSIVE BREAKPOINT
-========================================================= */
+/* RESPONSIVE BREAKPOINT */
 @media (max-width: 800px) {
-  .desktop-nav {
-    display: none;
-  }
-
-  .gp-mobile-toggle {
-    display: flex;
-  }
+  .desktop-nav { display: none; }
+  .gp-mobile-toggle { display: flex; }
 }
 
 /* =======================================================
@@ -232,10 +224,12 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* =======================================================
-   SERVICES
+   SERVICES — Cream Background + Solid White Cards
 ========================================================= */
 .gp-services {
   padding: 3rem 0;
+  background: rgba(249, 246, 240, 0.88);
+  backdrop-filter: blur(1px);
 }
 
 .section-heading {
@@ -249,14 +243,15 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   gap: 1.25rem;
   grid-template-columns: repeat(3, 1fr);
+  margin-top: 1rem;
 }
 
 .gp-service-card {
-  background: #ffffffee;
+  background: #ffffff;
   padding: 1.25rem;
   border-radius: var(--gp-radius-soft);
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: var(--gp-shadow-soft);
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
 .gp-service-card h3 {
