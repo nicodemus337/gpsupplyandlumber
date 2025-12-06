@@ -44,11 +44,15 @@ body::before {
   position: fixed;
   inset: 0;
   background: url("../images/end-grain-texture.JPG") center/cover no-repeat;
-  opacity: 0.28;
-  filter: brightness(0.55) contrast(1.25);
+  
+  /* much darker + richer */
+  opacity: 0.45;
+  filter: brightness(0.35) contrast(1.35);
+
   z-index: -1;
   pointer-events: none;
 }
+
 
 img {
   max-width: 100%;
@@ -73,16 +77,27 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(243,238,228,0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: var(--gp-green); /* dark green */
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
+
 
 .gp-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 0;
+}
+
+.gp-nav a {
+  color: #ffffff !important;
+}
+
+.gp-brand-text span {
+  color: #ffffff !important;
+}
+.gp-brand-text span:last-child {
+  color: rgba(255,255,255,0.75) !important;
 }
 
 .gp-brand {
@@ -158,15 +173,6 @@ a {
   width: 100%;
 }
 
-/* NAV CTA — Unified Forest Green */
-.gp-nav-cta {
-  padding: 0.45rem 1rem;
-  border-radius: var(--gp-radius-pill);
-  background: var(--gp-green);
-  color: #fff;
-  font-weight: 500;
-  border: 1px solid var(--gp-green-dark);
-}
 
 /* ============================================
    HERO
