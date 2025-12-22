@@ -15,33 +15,33 @@
   <header class="gp-header">
     <div class="gp-shell gp-nav">
 
-      <!-- Brand -->
-      <div class="gp-brand">
+      <!-- Brand (make it a home link) -->
+      <a class="gp-brand" href="index.html" aria-label="G&P Supply & Lumber Home">
         <div class="gp-logo-mark">
           <img src="images/gp-logo-header.png" alt="G&P Logo">
         </div>
         <div class="gp-brand-text">
-          <span>G&P Supply & Lumber</span>
-          <span>Since 1937</span>
+          <span class="gp-brand-name">G&amp;P Supply &amp; Lumber</span>
+          <span class="gp-brand-since">Since 1937</span>
         </div>
-      </div>
+      </a>
 
       <!-- Desktop Nav -->
-      <nav class="gp-nav-links desktop-nav">
+      <nav class="gp-nav-links desktop-nav" aria-label="Primary">
         <a href="#services">Services</a>
         <a href="about.html">About</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <!-- Mobile Menu Trigger -->
-      <button class="gp-mobile-toggle" aria-label="Toggle Navigation">
+      <button class="gp-mobile-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="gp-mobile-menu">
         <span></span><span></span><span></span>
       </button>
 
     </div>
 
     <!-- Mobile Dropdown -->
-    <nav class="gp-mobile-menu">
+    <nav id="gp-mobile-menu" class="gp-mobile-menu" aria-label="Mobile">
       <a href="#services">Services</a>
       <a href="about.html">About</a>
       <a href="#contact">Contact</a>
@@ -120,7 +120,7 @@
        FOOTER
   ============================= -->
   <footer class="gp-footer">
-    © 2025 G&P Supply & Lumber — Serving Loreauville Since 1937
+    © 2025 G&amp;P Supply &amp; Lumber — Serving Loreauville Since 1937
   </footer>
 
 
@@ -132,8 +132,18 @@
     const menu = document.querySelector('.gp-mobile-menu');
 
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      menu.classList.toggle('open');
+      const isOpen = toggle.classList.toggle('open');
+      menu.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Close mobile menu after clicking a link
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('open');
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
     });
   </script>
 

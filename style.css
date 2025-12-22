@@ -12,41 +12,60 @@
   --gp-gray-mid: #c2bcb0;
   --gp-charcoal: #212121;
 
-  --gp-radius-soft: 10px;
+  --gp-radius-soft: 12px;
   --gp-radius-lg: 24px;
   --gp-radius-pill: 999px;
 
-  --gp-shadow-soft: 0 10px 24px rgba(0,0,0,0.08);
+  --gp-shadow-soft: 0 10px 24px rgba(0,0,0,0.10);
+  --gp-shadow-card: 0 8px 18px rgba(0,0,0,0.10);
+
   --gp-max-width: 1120px;
   --gp-gutter: 1.5rem;
+
+  --panel-bg: rgba(249, 246, 240, 0.92);
+  --panel-border: rgba(0,0,0,0.10);
+
+  --texture-opacity: 0.18; /* turn down/up */
 }
 
 /* =======================================================
-   GLOBAL RESET + BACKGROUND
+   GLOBAL RESET + BACKGROUND (GREEN + END-GRAIN OVERLAY)
 ========================================================= */
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--gp-charcoal);
-  background: var(--gp-cream-soft);
+  background: var(--gp-green);
   line-height: 1.6;
   position: relative;
 }
 
-/* Full-strength woodgrain background */
+/* End-grain overlay (subtle) */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("../images/end-grain-texture.JPG") center/cover no-repeat;
-  opacity: 1;
-  filter: none;
+  background: url("images/end-grain-texture.JPG") center / 900px auto repeat;
+  opacity: var(--texture-opacity);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Soft lighting to keep panels readable */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(1100px 650px at 20% 10%, rgba(255,255,255,0.10), transparent 60%),
+    radial-gradient(900px 600px at 80% 30%, rgba(0,0,0,0.12), transparent 55%),
+    linear-gradient(to bottom, rgba(0,0,0,0.06), rgba(0,0,0,0.14));
   z-index: -1;
   pointer-events: none;
 }
@@ -61,6 +80,16 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* =======================================================
+   REUSABLE PANEL (one consistent visual language)
+========================================================= */
+.gp-panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--gp-radius-lg);
+  box-shadow: var(--gp-shadow-soft);
+}
+
+/* =======================================================
    HEADER
 ========================================================= */
 .gp-header {
@@ -68,67 +97,91 @@ a { color: inherit; text-decoration: none; }
   top: 0;
   z-index: 100;
   background: var(--gp-green);
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.10);
 }
 
 .gp-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 0;
+  padding: 0.85rem 0;
+  gap: 1rem;
 }
 
 /* BRAND */
 .gp-brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
+  min-width: 0;
 }
 
 .gp-logo-mark {
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: none;
-  border: none;
+
+  /* This prevents CSS from creating a “box.” If you still see a box,
+     it’s inside the PNG and the asset needs a transparent background. */
+  background: transparent;
+  border: 0;
   border-radius: 0;
 }
 
 .gp-logo-mark img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.22));
 }
 
-.gp-brand-text span:first-child {
+.gp-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  min-width: 0;
+}
+
+.gp-brand-name {
   color: #fff;
   font-family: "Roboto Slab", serif;
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-size: 1.18rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.gp-brand-text span:last-child {
-  color: rgba(255,255,255,0.75);
-  font-size: 0.85rem;
+.gp-brand-since {
+  color: rgba(255,255,255,0.78);
+  font-size: 0.88rem;
+  margin-top: 0.15rem;
 }
 
 /* DESKTOP NAV */
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: 0.4rem;
 }
 
 .desktop-nav a {
-  color: #ffffff;
+  color: rgba(255,255,255,0.92);
+  font-weight: 600;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
 }
 
-/* Remove underline artifacts */
-.desktop-nav a::after {
-  display: none;
+.desktop-nav a:hover {
+  background: rgba(0,0,0,0.14);
+}
+
+.desktop-nav a:focus-visible {
+  outline: 3px solid rgba(245, 196, 65, 0.55);
+  outline-offset: 2px;
 }
 
 /* MOBILE MENU BUTTON */
@@ -139,7 +192,11 @@ a { color: inherit; text-decoration: none; }
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 10px;
 }
+
+.gp-mobile-toggle:hover { background: rgba(0,0,0,0.12); }
 
 .gp-mobile-toggle span {
   width: 24px;
@@ -152,19 +209,23 @@ a { color: inherit; text-decoration: none; }
 .gp-mobile-menu {
   display: none;
   flex-direction: column;
-  background: var(--gp-green);
-  padding: 0.75rem 1rem;
+  background: rgba(44, 91, 44, 0.98);
+  padding: 0.75rem 1rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.18);
 }
 
 .gp-mobile-menu a {
   color: #fff;
-  padding: 0.6rem 0;
+  padding: 0.65rem 0;
   font-size: 1.05rem;
+  font-weight: 600;
 }
 
-.gp-mobile-menu.open {
-  display: flex;
+.gp-mobile-menu a + a {
+  border-top: 1px solid rgba(255,255,255,0.10);
 }
+
+.gp-mobile-menu.open { display: flex; }
 
 /* RESPONSIVE BREAKPOINT */
 @media (max-width: 800px) {
@@ -173,70 +234,88 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* =======================================================
-   HERO — MINIMAL
+   HERO — MINIMAL (consistent panel, better spacing)
 ========================================================= */
 .gp-hero {
-  padding: 3rem 0 2.5rem;
+  padding: 3.2rem 0 2.4rem;
 }
 
 .gp-hero-shell {
-  background: rgba(255,255,255,0.95);
-  padding: 2rem;
+  /* make hero shell use the same panel language */
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
   border-radius: var(--gp-radius-lg);
   box-shadow: var(--gp-shadow-soft);
-  border: 1px solid rgba(0,0,0,0.08);
+  padding: 2.2rem;
 }
 
 .gp-hero h1 {
   font-family: "Roboto Slab", serif;
-  font-size: 2.4rem;
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  line-height: 1.05;
   margin: 0 0 1rem;
+  letter-spacing: -0.02em;
 }
 
 .gp-hero p {
-  margin-bottom: 1.2rem;
+  margin: 0 0 1.3rem;
+  color: rgba(33,33,33,0.82);
+  max-width: 62ch;
 }
 
 .gp-hero-buttons {
   display: flex;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 /* BUTTONS */
-.gp-button-primary {
-  background: var(--gp-green);
-  color: #fff;
-  padding: 0.6rem 1.3rem;
+.gp-button-primary,
+.gp-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.62rem 1.25rem;
   border-radius: var(--gp-radius-pill);
-  border: 1px solid var(--gp-green-dark);
-  font-weight: 500;
+  font-weight: 650;
+  border: 1px solid transparent;
+  transition: transform 0.06s ease, filter 0.12s ease, background 0.12s ease;
 }
 
-.gp-button-primary:hover {
+.gp-button-primary {
   background: var(--gp-green-dark);
+  color: #fff;
+  border-color: rgba(0,0,0,0.18);
 }
+
+.gp-button-primary:hover { filter: brightness(1.05); }
+.gp-button-primary:active { transform: translateY(1px); }
 
 .gp-button-secondary {
-  background: #fff;
-  padding: 0.6rem 1.3rem;
-  border-radius: var(--gp-radius-pill);
-  border: 1px solid var(--gp-gray-light);
+  background: rgba(255,255,255,0.78);
+  color: var(--gp-charcoal);
+  border-color: rgba(0,0,0,0.14);
 }
 
+.gp-button-secondary:hover { background: rgba(255,255,255,0.92); }
+.gp-button-secondary:active { transform: translateY(1px); }
+
 /* =======================================================
-   SERVICES — Cream Background + Solid White Cards
+   SERVICES — remove the “random cream slab”
+   Keep it consistent: green background + cream panel cards
 ========================================================= */
 .gp-services {
-  padding: 3rem 0;
-  background: rgba(249, 246, 240, 0.88);
-  backdrop-filter: blur(1px);
+  padding: 2.6rem 0 3.2rem;
+  background: transparent;
 }
 
 .section-heading {
   text-align: center;
   font-family: "Roboto Slab", serif;
-  font-size: 1.8rem;
-  margin-bottom: 1.8rem;
+  font-size: 2rem;
+  margin: 0 0 1.8rem;
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
 }
 
 .gp-services-grid {
@@ -247,36 +326,48 @@ a { color: inherit; text-decoration: none; }
 }
 
 .gp-service-card {
-  background: #ffffff;
-  padding: 1.25rem;
+  background: rgba(249, 246, 240, 0.92);
+  padding: 1.35rem;
   border-radius: var(--gp-radius-soft);
   border: 1px solid rgba(0,0,0,0.10);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  box-shadow: var(--gp-shadow-card);
 }
 
 .gp-service-card h3 {
-  margin-top: 0;
+  margin: 0 0 0.5rem;
   font-family: "Roboto Slab", serif;
+  font-size: 1.15rem;
+}
+
+.gp-service-card p {
+  margin: 0;
+  color: rgba(33,33,33,0.80);
 }
 
 /* =======================================================
-   CONTACT
+   CONTACT — consistent panel + spacing
 ========================================================= */
 .gp-contact {
-  padding: 3rem 0;
+  padding: 2.6rem 0 3.2rem;
 }
 
 .gp-contact-shell {
-  background: rgba(255,255,255,0.95);
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
   border-radius: var(--gp-radius-lg);
-  padding: 2rem;
+  padding: 2.2rem;
   box-shadow: var(--gp-shadow-soft);
-  border: 1px solid rgba(0,0,0,0.1);
 }
 
 .gp-contact-shell h2 {
   font-family: "Roboto Slab", serif;
-  margin-top: 0;
+  margin: 0 0 0.6rem;
+  font-size: 2rem;
+}
+
+.gp-contact-shell p {
+  margin: 0.4rem 0;
+  color: rgba(33,33,33,0.84);
 }
 
 /* =======================================================
@@ -285,16 +376,17 @@ a { color: inherit; text-decoration: none; }
 .gp-footer {
   padding: 1.4rem 0;
   text-align: center;
-  background: #1e1b17;
-  color: var(--gp-cream);
-  font-size: 0.9rem;
+  background: rgba(0,0,0,0.55);
+  color: rgba(249, 246, 240, 0.92);
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255,255,255,0.10);
 }
 
 /* =======================================================
    MOBILE STACKING
 ========================================================= */
 @media (max-width: 800px) {
-  .gp-services-grid {
-    grid-template-columns: 1fr;
-  }
+  .gp-services-grid { grid-template-columns: 1fr; }
+  .gp-hero-shell { padding: 1.6rem; }
+  .gp-contact-shell { padding: 1.6rem; }
 }
