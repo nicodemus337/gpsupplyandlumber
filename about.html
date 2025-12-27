@@ -1,55 +1,282 @@
-<!doctype html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About | GP Supply & Lumber</title>
-<link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-192.png">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>GP Supply & Lumber — Loreauville, LA (Since 1937)</title>
+  <meta name="description" content="GP Supply & Lumber in Loreauville, LA — lumber, building materials, hardware, tools, and hometown support. Generations rooted in service and supply." />
+  <meta name="theme-color" content="#111111" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<header class="site-header">
-<nav class="nav">
-<a href="index.html" class="brand"><img src="images/gp-logo.png" alt="GP Supply & Lumber" class="brand-mark"/></a>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="about.html" class="active">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
 
+  <a class="gp-skip" href="#main">Skip to content</a>
 
-<main class="section">
-<div class="container narrow">
-<h1 class="display-sm">About Us</h1>
-<p class="lede slogan">Generations Rooted in Service and Supply</p>
-<p>We stock what pros actually use, answer the phone, quote fast, and stand behind every sale. The goal is straightforward — keep builders building across Iberia and St. Martin Parish.</p>
+  <!-- Minimal header over hero (Rivers-ish) -->
+  <header class="gp-header">
+    <div class="gp-shell gp-nav">
+      <a class="gp-brand" href="index.html" aria-label="GP Supply & Lumber Home">
+        <img class="gp-logo" src="images/gp-logo-header.png" alt="GP Supply & Lumber logo">
+        <span class="gp-brand-text">
+          <span class="gp-brand-name">GP Supply &amp; Lumber</span>
+          <span class="gp-brand-since">Since 1937</span>
+        </span>
+      </a>
 
+      <nav class="gp-nav-links desktop-nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#story">Story</a>
+        <a href="#visit">Visit</a>
+        <a class="gp-nav-cta gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
+      </nav>
 
-<div class="rule"></div>
+      <button class="gp-mobile-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="gp-mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
+    <nav id="gp-mobile-menu" class="gp-mobile-menu" aria-label="Mobile">
+      <a href="#services">Services</a>
+      <a href="#story">Story</a>
+      <a href="#visit">Visit</a>
+      <a class="gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
+      <a href="tel:13372294224">Call</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
+    </nav>
+  </header>
 
-<h2 class="kicker">Owners</h2>
+  <main id="main">
 
+    <!-- HERO (full-bleed photo, minimal UI) -->
+    <section class="gp-hero" aria-label="GP Supply & Lumber hero">
+      <div class="gp-hero-media" aria-hidden="true">
+        <img src="images/storefront-2026.JPG" alt="">
+      </div>
 
-<h3>Shannon Gonsoulin, DVM — Co‑Owner</h3>
-<p class="bio-short">Doc is a veterinarian, rancher, and lifelong hand with animals. He rodeoed to help pay for school, built multiple vet clinics with his wife, Toni, and now brings that same grit to serving local builders and families. Rooted in the 1770s Gonsoulin lineage, he works to carry a practical legacy forward in Loreauville.</p>
+      <div class="gp-shell gp-hero-inner">
+        <p class="gp-eyebrow">Generations Rooted in Service and Supply</p>
+        <h1 class="gp-hero-title">Supply. Lumber. Hardware.</h1>
+        <p class="gp-hero-sub">
+          Serving Loreauville and Acadiana with dependable materials and honest help—since 1937.
+        </p>
 
+        <div class="gp-hero-actions">
+          <a class="gp-btn gp-btn--solid gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
+          <a class="gp-btn gp-btn--ghost" href="#visit">Hours &amp; Map</a>
+        </div>
 
-<h3>— Mr. Price — Co‑Owner</h3>
-<p>Bio coming soon.</p>
-</div>
-</main>
+        <!-- Quick facts (quiet, but high utility) -->
+        <div class="gp-quick-facts" aria-label="Store basics">
+          <div class="gp-quick-fact"><strong>700 N Main St</strong> · Loreauville, LA</div>
+          <div class="gp-quick-fact"><strong>Mon–Thu</strong> 8–4 · <strong>Fri</strong> 8–12:30</div>
+          <div class="gp-quick-fact"><a href="tel:13372294224"><strong>(337) 229-4224</strong></a></div>
+        </div>
+      </div>
+    </section>
 
+    <!-- INTRO (simple, editorial) -->
+    <section class="gp-intro" aria-label="Intro">
+      <div class="gp-shell gp-intro-grid">
+        <h2 class="gp-kicker">A hometown yard with real inventory—and real people.</h2>
+        <div class="gp-intro-copy">
+          <p>
+            GP Supply &amp; Lumber is built for the work that keeps this place running: building, repairing, fencing,
+            fixing, finishing, and getting back to it tomorrow.
+          </p>
+          <div class="gp-intro-actions">
+            <a class="gp-text-link" href="#services">See what we offer →</a>
+            <a class="gp-text-link gp-shop-link" href="#" target="_blank" rel="noopener">Shop online →</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer class="site-footer">
-<div class="container narrow">
-<p class="foot-line">© <span id="y"></span> GP Supply & Lumber • 700 N Main St, Loreauville LA 70552 • <a href="tel:13372294224">337‑229‑4224</a> • <a href="mailto:gpsupplyandlumber@gmail.com">gpsupplyandlumber@gmail.com</a></p>
-<p class="social-links"><a href="https://instagram.com/gpsupplyandlumber" target="_blank" rel="noopener">Instagram</a> · <a href="https://facebook.com/gpsupplyandlumber" target="_blank" rel="noopener">Facebook</a></p>
-</div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+    <!-- STORY / PHOTO TIMELINE -->
+    <section id="story" class="gp-story" aria-label="Storefront through the years">
+      <div class="gp-shell">
+        <div class="gp-section-head">
+          <h2>Rooted Here</h2>
+          <p>Three storefronts. One corner. Nearly 90 years of supply and service.</p>
+        </div>
+
+        <div class="gp-story-grid">
+          <figure class="gp-story-card">
+            <img src="images/storefront-1937.png" alt="Storefront in 1937" loading="lazy" decoding="async">
+            <figcaption>1937</figcaption>
+          </figure>
+
+          <figure class="gp-story-card">
+            <img src="images/storefront-2025.JPG" alt="Storefront in 2025" loading="lazy" decoding="async">
+            <figcaption>2025</figcaption>
+          </figure>
+
+          <figure class="gp-story-card">
+            <img src="images/storefront-2026.JPG" alt="Storefront in 2026" loading="lazy" decoding="async">
+            <figcaption>2026</figcaption>
+          </figure>
+        </div>
+
+        <!-- Ownership + interior photo strip -->
+        <div class="gp-gallery-row" aria-label="Ownership and store interior">
+          <figure class="gp-gallery-item gp-gallery-item--wide">
+            <img src="images/new.ownership.JPG" alt="New ownership of GP Supply & Lumber" loading="lazy" decoding="async">
+          </figure>
+          <figure class="gp-gallery-item">
+            <img src="images/interior.entrance.JPG" alt="Store entrance interior" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES (quiet blocks, not “cards”) -->
+    <section id="services" class="gp-services" aria-label="Services">
+      <div class="gp-shell">
+        <div class="gp-section-head">
+          <h2>What We Offer</h2>
+          <p>Hardware, lumber, and support you can actually use.</p>
+        </div>
+
+        <div class="gp-services-grid">
+          <article class="gp-service">
+            <h3>Lumber &amp; Building Materials</h3>
+            <p>Stocked for repairs, additions, and new builds—from small jobs to big ones.</p>
+          </article>
+
+          <article class="gp-service">
+            <h3>Hardware &amp; Tools</h3>
+            <p>Fasteners, hand tools, blades, adhesives, jobsite essentials, and the stuff you forgot you needed.</p>
+          </article>
+
+          <article class="gp-service">
+            <h3>Local Support</h3>
+            <p>Tell us the job. We’ll point you right—and help you leave with what works.</p>
+          </article>
+        </div>
+
+        <div class="gp-cta-band" aria-label="Shop callout">
+          <div class="gp-cta-band__text">
+            <div class="gp-cta-band__title">Prefer to order online?</div>
+            <div class="gp-cta-band__sub">Browse inventory and place your order through our online shop.</div>
+          </div>
+          <div class="gp-cta-band__actions">
+            <a class="gp-btn gp-btn--solid gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
+            <a class="gp-btn gp-btn--ghost" href="#visit">Pickup info</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT + MAP -->
+    <section id="visit" class="gp-visit" aria-label="Visit">
+      <div class="gp-shell gp-visit-grid">
+        <div class="gp-visit-left">
+          <h2>Visit the Yard</h2>
+
+          <div class="gp-facts">
+            <div class="gp-fact">
+              <div class="gp-fact-label">Hours</div>
+              <div class="gp-fact-value">
+                Mon–Thu: 8am–4pm<br>
+                Fri: 8am–12:30pm<br>
+                Sat–Sun: Closed
+              </div>
+            </div>
+
+            <div class="gp-fact">
+              <div class="gp-fact-label">Location</div>
+              <div class="gp-fact-value">700 N Main St, Loreauville, LA 70552</div>
+            </div>
+
+            <div class="gp-fact">
+              <div class="gp-fact-label">Contact</div>
+              <div class="gp-fact-value">
+                <a href="tel:13372294224">(337) 229-4224</a><br>
+                <a href="https://instagram.com/gpsupplyandlumber" target="_blank" rel="noopener">@gpsupplyandlumber</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="gp-visit-actions">
+            <a class="gp-btn gp-btn--solid" href="tel:13372294224">Call</a>
+            <a class="gp-btn gp-btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
+            <a class="gp-btn gp-btn--ghost gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
+          </div>
+
+          <div class="gp-pillars" aria-label="Core pillars">
+            <div class="gp-pillar">Quality</div>
+            <div class="gp-pillar">Service</div>
+            <div class="gp-pillar">Relationship</div>
+          </div>
+        </div>
+
+        <div class="gp-visit-right">
+          <iframe
+            title="Map to GP Supply & Lumber"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=700%20N%20Main%20St%2C%20Loreauville%20LA%2070552&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="gp-footer">
+    <div class="gp-shell gp-footer-grid">
+      <div>
+        <div class="gp-footer-brand">GP Supply &amp; Lumber</div>
+        <div class="gp-footer-muted">Since 1937 · Loreauville, Louisiana</div>
+      </div>
+      <div class="gp-footer-muted">
+        700 N Main St, Loreauville, LA 70552<br>
+        <a href="tel:13372294224">(337) 229-4224</a> ·
+        <a href="https://instagram.com/gpsupplyandlumber" target="_blank" rel="noopener">@gpsupplyandlumber</a> ·
+        <a class="gp-shop-link" href="#" target="_blank" rel="noopener">Shop Online</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile bottom bar (high-converting) -->
+  <nav class="gp-mobile-cta" aria-label="Quick actions">
+    <a class="gp-mobile-cta__btn gp-mobile-cta__btn--primary gp-shop-link" href="#" target="_blank" rel="noopener">Shop</a>
+    <a class="gp-mobile-cta__btn" href="tel:13372294224">Call</a>
+    <a class="gp-mobile-cta__btn" href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
+  </nav>
+
+  <script>
+    // ONE source of truth for the online shop URL:
+    const SHOP_URL = "https://gonsoulinpricesupplyandlumber-3048.paladinshop.com";
+
+    // Force every "Shop Now" link to point to Paladin
+    document.querySelectorAll(".gp-shop-link").forEach((a) => {
+      a.setAttribute("href", SHOP_URL);
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+    });
+
+    // Mobile menu toggle
+    const toggle = document.querySelector('.gp-mobile-toggle');
+    const menu = document.querySelector('.gp-mobile-menu');
+
+    const closeMenu = () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.classList.toggle('open');
+      menu.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+  </script>
+
 </body>
 </html>
