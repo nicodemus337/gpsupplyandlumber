@@ -541,3 +541,96 @@ img{ max-width:100%; display:block; }
     background: rgba(255,255,255,.92);
   }
 }
+/* ================================
+   Interior pages (solid header)
+================================ */
+.gp-header--solid{
+  position: sticky;
+  background: #111;
+  padding: .65rem 0;
+}
+
+.gp-page{
+  padding: 2.2rem 0 3rem;
+  background: var(--paper);
+}
+
+.gp-page-hero{
+  padding: 2.8rem 0 1.4rem;
+  background: var(--paper);
+}
+
+.gp-page-title{
+  margin: 0 0 .35rem;
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  line-height: 1.06;
+  letter-spacing: -.02em;
+  font-weight: 1000;
+}
+
+.gp-page-sub{
+  margin: 0;
+  max-width: 78ch;
+  opacity: .86;
+}
+
+.gp-divider{
+  height: 1px;
+  background: rgba(18,18,18,.12);
+  margin: 1.6rem 0;
+}
+
+/* light “content cards” for interior sections */
+.gp-block{
+  border: 1px solid rgba(18,18,18,.12);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.55);
+  padding: 1.15rem 1.1rem;
+}
+
+.gp-two-col{
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 900px){
+  .gp-two-col{ grid-template-columns: 1fr; }
+}
+
+/* simple list */
+.gp-list{
+  margin: .65rem 0 0;
+  padding-left: 1.1rem;
+}
+.gp-list li{ margin: .25rem 0; }
+
+/* nav active state (optional) */
+.desktop-nav a[aria-current="page"]{
+  border-bottom-color: rgba(255,255,255,.9);
+}
+/* ================================
+   Media frames (no dead space)
+================================ */
+.gp-photo {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(0,0,0,.06);
+}
+
+.gp-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Two safe aspect ratios you’ll actually use */
+.gp-photo--wide { aspect-ratio: 16 / 10; }
+.gp-photo--tall { aspect-ratio: 4 / 5; }
+
+/* If you still have old min-heights in the gallery, kill them */
+.gp-gallery-item,
+.gp-gallery-item--wide { min-height: unset !important; }
