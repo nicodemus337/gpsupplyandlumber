@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,16 @@
   <title>GP Supply & Lumber — Loreauville, LA (Since 1937)</title>
   <meta name="description" content="GP Supply & Lumber in Loreauville, LA — lumber, building materials, hardware, tools, and hometown support. Generations rooted in service and supply." />
   <meta name="theme-color" content="#111111" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GP Supply & Lumber — Since 1937" />
+  <meta property="og:description" content="Lumber, hardware, tools, and hometown support in Loreauville, LA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/jan-warehouse.JPG" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -18,7 +29,6 @@
   <header class="gp-header">
     <div class="gp-shell gp-nav">
       <a class="gp-brand" href="index.html" aria-label="GP Supply & Lumber Home">
-        <!-- Use white logo over photos -->
         <img class="gp-logo" src="images/gp-logo-white.png" alt="GP Supply & Lumber logo">
         <span class="gp-brand-text">
           <span class="gp-brand-name">GP Supply &amp; Lumber</span>
@@ -53,14 +63,14 @@
     <!-- HERO -->
     <section class="gp-hero" aria-label="GP Supply & Lumber hero">
       <div class="gp-hero-media" aria-hidden="true">
-        <img src="images/storefront-2026.JPG" alt="">
+        <img src="images/jan-warehouse.JPG" alt="">
       </div>
 
       <div class="gp-shell gp-hero-inner">
         <p class="gp-eyebrow">Generations Rooted in Service and Supply</p>
         <h1 class="gp-hero-title">Supply. Lumber. Hardware.</h1>
         <p class="gp-hero-sub">
-          Serving Loreauville and Acadiana with dependable materials and honest help—since 1937.
+          Stocked for the work that keeps this place running—materials, tools, and help you can count on.
         </p>
 
         <div class="gp-hero-actions">
@@ -76,14 +86,14 @@
       </div>
     </section>
 
-    <!-- Intro -->
+    <!-- INTRO -->
     <section class="gp-intro" aria-label="Intro">
       <div class="gp-shell gp-intro-grid">
         <h2 class="gp-kicker">A hometown yard with real inventory—and real people.</h2>
         <div class="gp-intro-copy">
           <p>
-            GP Supply &amp; Lumber is built for the work that keeps this place running: building, repairing, fencing,
-            fixing, finishing, and getting back to it tomorrow.
+            GP Supply &amp; Lumber has served Loreauville since 1937. We stock what you need, help you choose right,
+            and keep projects moving—whether you’re fixing a fence or building something that lasts.
           </p>
           <div class="gp-intro-actions">
             <a class="gp-text-link" href="#services">See what we offer →</a>
@@ -93,12 +103,12 @@
       </div>
     </section>
 
-    <!-- Gallery (Rivers-ish: photo-first, no “card UI”) -->
+    <!-- GALLERY -->
     <section class="gp-gallery" aria-label="Store gallery">
       <div class="gp-shell">
         <div class="gp-gallery-grid">
           <figure class="gp-gallery-item gp-gallery-item--wide">
-            <img src="images/jan-warehouse.JPG" alt="Warehouse" loading="lazy" decoding="async">
+            <img src="images/storefront-2026.JPG" alt="Storefront 2026" loading="lazy" decoding="async">
           </figure>
           <figure class="gp-gallery-item">
             <img src="images/lumber.JPG" alt="Lumber" loading="lazy" decoding="async">
@@ -119,7 +129,7 @@
       </div>
     </section>
 
-    <!-- Story -->
+    <!-- STORY -->
     <section id="story" class="gp-story" aria-label="Storefront through the years">
       <div class="gp-shell">
         <div class="gp-section-head">
@@ -155,7 +165,7 @@
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- SERVICES -->
     <section id="services" class="gp-services" aria-label="Services">
       <div class="gp-shell">
         <div class="gp-section-head">
@@ -193,7 +203,7 @@
       </div>
     </section>
 
-    <!-- Visit -->
+    <!-- VISIT -->
     <section id="visit" class="gp-visit" aria-label="Visit">
       <div class="gp-shell gp-visit-grid">
         <div class="gp-visit-left">
@@ -272,14 +282,15 @@
   </nav>
 
   <script>
+    // Single source of truth for Paladin shop URL
     const SHOP_URL = "https://gonsoulinpricesupplyandlumber-3048.paladinshop.com";
-
     document.querySelectorAll(".gp-shop-link").forEach((a) => {
       a.href = SHOP_URL;
       a.target = "_blank";
       a.rel = "noopener";
     });
 
+    // Mobile nav toggle
     const toggle = document.querySelector('.gp-mobile-toggle');
     const menu = document.querySelector('.gp-mobile-menu');
 
@@ -298,6 +309,5 @@
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   </script>
-
 </body>
 </html>
