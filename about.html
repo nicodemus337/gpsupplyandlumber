@@ -12,6 +12,7 @@
 <body>
   <a class="gp-skip" href="#main">Skip to content</a>
 
+  <!-- SOLID HEADER (fixes logo visibility on light backgrounds) -->
   <header class="gp-header gp-header--solid">
     <div class="gp-shell gp-nav">
       <a class="gp-brand" href="index.html" aria-label="GP Supply & Lumber Home">
@@ -45,19 +46,34 @@
   </header>
 
   <main id="main">
-    <section class="gp-page-hero">
-      <div class="gp-shell">
-        <h1 class="gp-page-title">About</h1>
-        <p class="gp-page-sub">Same corner. Same purpose. Supply and service for the people who keep this place built and working.</p>
+
+    <!-- HERO (like index) -->
+    <section class="gp-hero" aria-label="About hero" style="min-height: 62vh; padding: 4.75rem 0 2.6rem;">
+      <div class="gp-hero-media" aria-hidden="true">
+        <img src="images/new.ownership.JPG" alt="">
+      </div>
+
+      <div class="gp-shell gp-hero-inner">
+        <p class="gp-eyebrow">About</p>
+        <h1 class="gp-hero-title">Same corner. Same purpose.</h1>
+        <p class="gp-hero-sub">
+          Supply and service for the people who keep this place built and working.
+        </p>
+
+        <div class="gp-hero-actions">
+          <a class="gp-btn gp-btn--solid gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
+          <a class="gp-btn gp-btn--ghost" href="contact.html">Hours &amp; Map</a>
+        </div>
       </div>
     </section>
 
-    <section class="gp-page">
+    <!-- CONTENT -->
+    <section class="gp-page" style="padding-top: 2.6rem;">
       <div class="gp-shell">
 
         <div class="gp-two-col">
           <div class="gp-block">
-            <h2 style="margin:0 0 .35rem; font-weight:1000;">Generations rooted in Loreauville</h2>
+            <h2 style="margin:0 0 .55rem; font-weight:1000;">Generations rooted in Loreauville</h2>
             <p style="margin:0; opacity:.86;">
               GP Supply &amp; Lumber has served this community since 1937. We’re keeping what matters:
               dependable inventory, honest help, and a place you can count on when work needs doing.
@@ -65,17 +81,23 @@
 
             <div class="gp-divider"></div>
 
-            <h3 style="margin:.2rem 0 .35rem; font-weight:1000;">What we believe</h3>
+            <h3 style="margin:.1rem 0 .45rem; font-weight:1000;">What we believe</h3>
             <ul class="gp-list">
               <li>Good service is part of the product.</li>
               <li>Inventory matters—especially when time matters.</li>
               <li>Relationships are the long game.</li>
             </ul>
+
+            <div style="height: .9rem;"></div>
+            <a class="gp-text-link" href="services.html">See services →</a>
           </div>
 
-          <div class="gp-block">
-            <img src="images/new.ownership.JPG" alt="New ownership of GP Supply & Lumber" style="border-radius: var(--radius); overflow:hidden;">
-          </div>
+          <!-- Clean photo frame (no gray dead space) -->
+          <figure class="gp-photo gp-photo--wide" style="margin:0;">
+            <img src="images/interior.entrance.JPG"
+                 alt="Inside GP Supply & Lumber"
+                 loading="lazy" decoding="async">
+          </figure>
         </div>
 
         <div class="gp-divider"></div>
@@ -102,21 +124,26 @@
 
         <div class="gp-divider"></div>
 
+        <!-- Second “about” band: working store + CTA -->
         <div class="gp-two-col">
           <div class="gp-block">
-            <h2 style="margin:0 0 .35rem; font-weight:1000;">A working store for working people</h2>
+            <h2 style="margin:0 0 .45rem; font-weight:1000;">A working store for working people</h2>
             <p style="margin:0; opacity:.86;">
               This isn’t a showroom. It’s a place where projects start and problems get solved.
               If you’re not sure what you need, bring what you’ve got—we’ll help you match it.
             </p>
-            <div style="height:.9rem;"></div>
-            <a class="gp-btn gp-btn--solid" href="services.html">See services</a>
-            <a class="gp-btn gp-btn--ghost gp-shop-link" href="#" target="_blank" rel="noopener">Shop online</a>
+
+            <div style="height: 1rem;"></div>
+
+            <div style="display:flex; gap:.75rem; flex-wrap:wrap;">
+              <a class="gp-btn gp-btn--solid" href="services.html">Explore services</a>
+              <a class="gp-btn gp-btn--ghost gp-shop-link" href="#" target="_blank" rel="noopener">Shop online</a>
+            </div>
           </div>
 
-          <div class="gp-block">
-            <img src="images/interior.entrance.JPG" alt="Store entrance interior" style="border-radius: var(--radius); overflow:hidden;">
-          </div>
+          <figure class="gp-photo gp-photo--wide" style="margin:0;">
+            <img src="images/lumber.JPG" alt="Lumber and building materials" loading="lazy" decoding="async">
+          </figure>
         </div>
 
       </div>
@@ -147,18 +174,26 @@
   <script>
     const SHOP_URL = "https://gonsoulinpricesupplyandlumber-3048.paladinshop.com";
     document.querySelectorAll(".gp-shop-link").forEach((a) => {
-      a.href = SHOP_URL; a.target = "_blank"; a.rel = "noopener";
+      a.href = SHOP_URL;
+      a.target = "_blank";
+      a.rel = "noopener";
     });
 
     const toggle = document.querySelector('.gp-mobile-toggle');
     const menu = document.querySelector('.gp-mobile-menu');
-    const closeMenu = () => { toggle.classList.remove('open'); menu.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
+
+    const closeMenu = () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
 
     toggle?.addEventListener('click', () => {
       const isOpen = toggle.classList.toggle('open');
       menu.classList.toggle('open', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
     });
+
     menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   </script>
