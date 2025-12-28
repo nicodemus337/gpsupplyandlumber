@@ -1,313 +1,520 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+/* style.css */
+:root{
+  --ink: #121212;
+  --paper: #f6f2ea;
+  --paper-2: #efe9df;
+  --accent: #2c5b2c;
 
-  <title>GP Supply & Lumber — Loreauville, LA (Since 1937)</title>
-  <meta name="description" content="GP Supply & Lumber in Loreauville, LA — lumber, building materials, hardware, tools, and hometown support. Generations rooted in service and supply." />
-  <meta name="theme-color" content="#111111" />
+  --max: 1160px;
+  --gut: 1.5rem;
+  --radius: 18px;
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="GP Supply & Lumber — Since 1937" />
-  <meta property="og:description" content="Lumber, hardware, tools, and hometown support in Loreauville, LA." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/jan-warehouse.JPG" />
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
 
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png" />
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
 
-  <link rel="stylesheet" href="style.css" />
-</head>
+a{ color: inherit; text-decoration: none; }
+img{ max-width:100%; display:block; }
 
-<body>
-  <a class="gp-skip" href="#main">Skip to content</a>
+.gp-shell{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gut);
+}
 
-  <!-- Minimal header over hero -->
-  <header class="gp-header">
-    <div class="gp-shell gp-nav">
-      <a class="gp-brand" href="index.html" aria-label="GP Supply & Lumber Home">
-        <img class="gp-logo" src="images/gp-logo-white.png" alt="GP Supply & Lumber logo">
-        <span class="gp-brand-text">
-          <span class="gp-brand-name">GP Supply &amp; Lumber</span>
-          <span class="gp-brand-since">Since 1937</span>
-        </span>
-      </a>
+/* Skip link */
+.gp-skip{
+  position:absolute; left:-999px; top:0;
+  background:#fff; color:#000;
+  padding:.6rem .8rem; border-radius: 12px;
+  z-index: 999;
+}
+.gp-skip:focus{ left: .75rem; top: .75rem; }
 
-      <nav class="gp-nav-links desktop-nav" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#story">Story</a>
-        <a href="#visit">Visit</a>
-        <a class="gp-nav-cta gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
-      </nav>
+/* Header */
+.gp-header{
+  position:absolute;
+  top:0; left:0; right:0;
+  z-index: 50;
+  padding: .8rem 0;
+}
+.gp-nav{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 1rem;
+}
 
-      <button class="gp-mobile-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="gp-mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+.gp-brand{
+  display:flex;
+  align-items:center;
+  gap: .75rem;
+  min-width:0;
+  color: rgba(255,255,255,.95);
+}
+.gp-logo{
+  width: 56px;
+  height: auto;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.25));
+}
+.gp-brand-text{ display:flex; flex-direction:column; line-height:1.05; }
+.gp-brand-name{ font-weight: 950; letter-spacing:.01em; }
+.gp-brand-since{ font-size:.9rem; opacity:.8; }
 
-    <nav id="gp-mobile-menu" class="gp-mobile-menu" aria-label="Mobile">
-      <a href="#services">Services</a>
-      <a href="#story">Story</a>
-      <a href="#visit">Visit</a>
-      <a class="gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
-      <a href="tel:13372294224">Call</a>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
-    </nav>
-  </header>
+.desktop-nav{
+  display:flex;
+  align-items:center;
+  gap: .9rem;
+}
+.desktop-nav a{
+  color: rgba(255,255,255,.92);
+  font-weight: 900;
+  padding: .35rem .2rem;
+  border-bottom: 2px solid transparent;
+}
+.desktop-nav a:hover{ border-bottom-color: rgba(255,255,255,.7); }
 
-  <main id="main">
+.gp-nav-cta{
+  padding: .55rem .9rem !important;
+  border-radius: 999px;
+  background: rgba(245,196,65,.95);
+  color: rgba(18,18,18,.95) !important;
+  border-bottom: none !important;
+}
 
-    <!-- HERO -->
-    <section class="gp-hero" aria-label="GP Supply & Lumber hero">
-      <div class="gp-hero-media" aria-hidden="true">
-        <img src="images/jan-warehouse.JPG" alt="">
-      </div>
+/* Mobile toggle */
+.gp-mobile-toggle{
+  display:none;
+  flex-direction:column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: .5rem;
+  cursor:pointer;
+}
+.gp-mobile-toggle span{
+  width: 24px;
+  height: 3px;
+  background: rgba(255,255,255,.95);
+  border-radius: 2px;
+}
 
-      <div class="gp-shell gp-hero-inner">
-        <p class="gp-eyebrow">Generations Rooted in Service and Supply</p>
-        <h1 class="gp-hero-title">Supply. Lumber. Hardware.</h1>
-        <p class="gp-hero-sub">
-          Stocked for the work that keeps this place running—materials, tools, and help you can count on.
-        </p>
+/* Mobile menu */
+.gp-mobile-menu{
+  display:none;
+  background: rgba(18,18,18,.92);
+  backdrop-filter: blur(8px);
+  padding: .75rem var(--gut) 1rem;
+}
+.gp-mobile-menu.open{ display:grid; }
+.gp-mobile-menu a{
+  color:#fff;
+  padding: .75rem 0;
+  font-weight: 950;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.gp-mobile-menu a:first-child{ border-top: none; }
 
-        <div class="gp-hero-actions">
-          <a class="gp-btn gp-btn--solid gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
-          <a class="gp-btn gp-btn--ghost" href="#visit">Hours &amp; Map</a>
-        </div>
+@media (max-width: 860px){
+  .desktop-nav{ display:none; }
+  .gp-mobile-toggle{ display:flex; }
+}
 
-        <div class="gp-quick-facts" aria-label="Store basics">
-          <div class="gp-quick-fact"><strong>700 N Main St</strong> · Loreauville, LA</div>
-          <div class="gp-quick-fact"><strong>Mon–Thu</strong> 8–4 · <strong>Fri</strong> 8–12:30</div>
-          <div class="gp-quick-fact"><a href="tel:13372294224"><strong>(337) 229-4224</strong></a></div>
-        </div>
-      </div>
-    </section>
+/* Hero */
+.gp-hero{
+  position: relative;
+  min-height: 86vh;
+  display:flex;
+  align-items:flex-end;
+  padding: 6.5rem 0 3rem;
+  color: #fff;
+  overflow:hidden;
+}
+.gp-hero-media{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+}
+.gp-hero-media img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  filter: contrast(1.02) saturate(1.02);
+}
+.gp-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,.62)),
+    radial-gradient(900px 500px at 20% 20%, rgba(44,91,44,.30), transparent 60%);
+}
 
-    <!-- INTRO -->
-    <section class="gp-intro" aria-label="Intro">
-      <div class="gp-shell gp-intro-grid">
-        <h2 class="gp-kicker">A hometown yard with real inventory—and real people.</h2>
-        <div class="gp-intro-copy">
-          <p>
-            GP Supply &amp; Lumber has served Loreauville since 1937. We stock what you need, help you choose right,
-            and keep projects moving—whether you’re fixing a fence or building something that lasts.
-          </p>
-          <div class="gp-intro-actions">
-            <a class="gp-text-link" href="#services">See what we offer →</a>
-            <a class="gp-text-link gp-shop-link" href="#" target="_blank" rel="noopener">Shop online →</a>
-          </div>
-        </div>
-      </div>
-    </section>
+.gp-hero-inner{ max-width: 860px; }
+.gp-eyebrow{
+  margin: 0 0 .8rem;
+  font-weight: 950;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  font-size: .85rem;
+  opacity: .92;
+}
+.gp-hero-title{
+  margin: 0 0 .75rem;
+  font-size: clamp(2.3rem, 5vw, 3.9rem);
+  line-height: 1.03;
+  letter-spacing: -.02em;
+  font-weight: 1000;
+}
+.gp-hero-sub{
+  margin: 0 0 1.2rem;
+  font-size: 1.05rem;
+  max-width: 62ch;
+  opacity: .92;
+}
 
-    <!-- GALLERY -->
-    <section class="gp-gallery" aria-label="Store gallery">
-      <div class="gp-shell">
-        <div class="gp-gallery-grid">
-          <figure class="gp-gallery-item gp-gallery-item--wide">
-            <img src="images/storefront-2026.JPG" alt="Storefront 2026" loading="lazy" decoding="async">
-          </figure>
-          <figure class="gp-gallery-item">
-            <img src="images/lumber.JPG" alt="Lumber" loading="lazy" decoding="async">
-          </figure>
-          <figure class="gp-gallery-item">
-            <img src="images/hammer.JPG" alt="Hardware tools" loading="lazy" decoding="async">
-          </figure>
-          <figure class="gp-gallery-item">
-            <img src="images/paint.JPG" alt="Paint supplies" loading="lazy" decoding="async">
-          </figure>
-          <figure class="gp-gallery-item">
-            <img src="images/bins.JPG" alt="Store inventory bins" loading="lazy" decoding="async">
-          </figure>
-          <figure class="gp-gallery-item">
-            <img src="images/interior.entrance.JPG" alt="Store entrance interior" loading="lazy" decoding="async">
-          </figure>
-        </div>
-      </div>
-    </section>
+.gp-hero-actions{
+  display:flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
 
-    <!-- STORY -->
-    <section id="story" class="gp-story" aria-label="Storefront through the years">
-      <div class="gp-shell">
-        <div class="gp-section-head">
-          <h2>Rooted Here</h2>
-          <p>Three storefronts. One corner. Nearly 90 years of supply and service.</p>
-        </div>
+/* Quiet buttons */
+.gp-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: .85rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 950;
+  letter-spacing: .01em;
+  border: 1px solid rgba(255,255,255,.28);
+}
+.gp-btn--solid{
+  background: rgba(245,196,65,.95);
+  color: rgba(18,18,18,.95);
+  border-color: rgba(0,0,0,.25);
+}
+.gp-btn--ghost{
+  background: rgba(255,255,255,.10);
+  color:#fff;
+}
 
-        <div class="gp-story-grid">
-          <figure class="gp-story-card">
-            <img src="images/storefront-1937.png" alt="Storefront in 1937" loading="lazy" decoding="async">
-            <figcaption>1937</figcaption>
-          </figure>
+.gp-quick-facts{
+  display:flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+.gp-quick-fact{
+  padding: .45rem .75rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,.30);
+  border: 1px solid rgba(255,255,255,.16);
+  font-weight: 800;
+}
 
-          <figure class="gp-story-card">
-            <img src="images/storefront-2025.JPG" alt="Storefront in 2025" loading="lazy" decoding="async">
-            <figcaption>2025</figcaption>
-          </figure>
+/* Intro */
+.gp-intro{
+  padding: 3.2rem 0 2.2rem;
+  background: var(--paper);
+}
+.gp-intro-grid{
+  display:grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 2rem;
+  align-items:start;
+}
+.gp-kicker{
+  margin:0;
+  font-size: 2.1rem;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  font-weight: 1000;
+}
+.gp-intro-copy p{
+  margin:0 0 .9rem;
+  max-width: 75ch;
+  opacity: .92;
+}
+.gp-intro-actions{
+  display:flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.gp-text-link{
+  font-weight: 1000;
+  border-bottom: 2px solid rgba(18,18,18,.25);
+  padding-bottom: 2px;
+}
+.gp-text-link:hover{ border-bottom-color: rgba(18,18,18,.7); }
 
-          <figure class="gp-story-card">
-            <img src="images/storefront-2026.JPG" alt="Storefront in 2026" loading="lazy" decoding="async">
-            <figcaption>2026</figcaption>
-          </figure>
-        </div>
+@media (max-width: 900px){
+  .gp-intro-grid{ grid-template-columns: 1fr; }
+}
 
-        <div class="gp-gallery-row" aria-label="Ownership and store interior">
-          <figure class="gp-gallery-item gp-gallery-item--wide">
-            <img src="images/new.ownership.JPG" alt="New ownership of GP Supply & Lumber" loading="lazy" decoding="async">
-          </figure>
-          <figure class="gp-gallery-item">
-            <img src="images/interior.entrance.JPG" alt="Store entrance interior" loading="lazy" decoding="async">
-          </figure>
-        </div>
-      </div>
-    </section>
+/* Gallery */
+.gp-gallery{
+  padding: 0 0 2.8rem;
+  background: var(--paper);
+}
+.gp-gallery-grid{
+  display:grid;
+  grid-template-columns: 1.3fr .7fr .7fr;
+  gap: 1rem;
+}
+.gp-gallery-item{
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: rgba(0,0,0,.08);
+}
+.gp-gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.gp-gallery-item--wide{
+  grid-row: span 2;
+  min-height: 520px;
+}
+.gp-gallery-item:not(.gp-gallery-item--wide){
+  min-height: 250px;
+}
 
-    <!-- SERVICES -->
-    <section id="services" class="gp-services" aria-label="Services">
-      <div class="gp-shell">
-        <div class="gp-section-head">
-          <h2>What We Offer</h2>
-          <p>Hardware, lumber, and support you can actually use.</p>
-        </div>
+@media (max-width: 900px){
+  .gp-gallery-grid{ grid-template-columns: 1fr; }
+  .gp-gallery-item--wide{ grid-row: auto; min-height: 260px; }
+  .gp-gallery-item{ min-height: 240px; }
+}
 
-        <div class="gp-services-grid">
-          <article class="gp-service">
-            <h3>Lumber &amp; Building Materials</h3>
-            <p>Stocked for repairs, additions, and new builds—from small jobs to big ones.</p>
-          </article>
+/* Section head */
+.gp-section-head{ margin-bottom: 1.25rem; }
+.gp-section-head h2{
+  margin: 0 0 .35rem;
+  font-size: 1.9rem;
+  letter-spacing: -.01em;
+  font-weight: 1000;
+}
+.gp-section-head p{
+  margin: 0;
+  max-width: 70ch;
+  opacity: .85;
+}
 
-          <article class="gp-service">
-            <h3>Hardware &amp; Tools</h3>
-            <p>Fasteners, hand tools, blades, adhesives, jobsite essentials, and the stuff you forgot you needed.</p>
-          </article>
+/* Story */
+.gp-story{
+  padding: 2.8rem 0 3.2rem;
+  background: var(--paper-2);
+}
+.gp-story-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.3rem;
+}
+.gp-story-card{
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: rgba(255,255,255,.35);
+  border: 1px solid rgba(18,18,18,.12);
+}
+.gp-story-card img{
+  width:100%;
+  height: 260px;
+  object-fit: cover;
+}
+.gp-story-card figcaption{
+  padding: .75rem .9rem;
+  font-weight: 950;
+  letter-spacing: .02em;
+  opacity: .9;
+}
 
-          <article class="gp-service">
-            <h3>Local Support</h3>
-            <p>Tell us the job. We’ll point you right—and help you leave with what works.</p>
-          </article>
-        </div>
+.gp-gallery-row{
+  display:grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.gp-gallery-row .gp-gallery-item img{
+  height: 360px;
+  object-fit: cover;
+}
 
-        <div class="gp-cta-band" aria-label="Shop callout">
-          <div class="gp-cta-band__text">
-            <div class="gp-cta-band__title">Order online</div>
-            <div class="gp-cta-band__sub">Browse inventory and place your order through our online shop.</div>
-          </div>
-          <div class="gp-cta-band__actions">
-            <a class="gp-btn gp-btn--solid gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
-            <a class="gp-btn gp-btn--ghost" href="#visit">Pickup info</a>
-          </div>
-        </div>
-      </div>
-    </section>
+@media (max-width: 900px){
+  .gp-story-grid{ grid-template-columns: 1fr; }
+  .gp-story-card img{ height: 240px; }
+  .gp-gallery-row{ grid-template-columns: 1fr; }
+  .gp-gallery-row .gp-gallery-item img{ height: 260px; }
+}
 
-    <!-- VISIT -->
-    <section id="visit" class="gp-visit" aria-label="Visit">
-      <div class="gp-shell gp-visit-grid">
-        <div class="gp-visit-left">
-          <h2>Visit the Yard</h2>
+/* Services */
+.gp-services{
+  padding: 3rem 0 3.2rem;
+  background: var(--paper);
+}
+.gp-services-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.4rem;
+}
+.gp-service{
+  padding: 1.25rem 1.15rem;
+  border: 1px solid rgba(18,18,18,.12);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.45);
+}
+.gp-service h3{ margin: 0 0 .35rem; font-size: 1.15rem; font-weight: 1000; }
+.gp-service p{ margin: 0; opacity: .86; }
 
-          <div class="gp-facts">
-            <div class="gp-fact">
-              <div class="gp-fact-label">Hours</div>
-              <div class="gp-fact-value">
-                Mon–Thu: 8am–4pm<br>
-                Fri: 8am–12:30pm<br>
-                Sat–Sun: Closed
-              </div>
-            </div>
+@media (max-width: 900px){
+  .gp-services-grid{ grid-template-columns: 1fr; }
+}
 
-            <div class="gp-fact">
-              <div class="gp-fact-label">Location</div>
-              <div class="gp-fact-value">700 N Main St, Loreauville, LA 70552</div>
-            </div>
+/* CTA band */
+.gp-cta-band{
+  margin-top: 1.6rem;
+  padding: 1.2rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(18,18,18,.12);
+  background: rgba(245,196,65,.18);
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.gp-cta-band__title{ font-weight: 1000; font-size: 1.1rem; }
+.gp-cta-band__sub{ opacity: .85; }
+.gp-cta-band__actions{ display:flex; gap:.75rem; flex-wrap:wrap; }
 
-            <div class="gp-fact">
-              <div class="gp-fact-label">Contact</div>
-              <div class="gp-fact-value">
-                <a href="tel:13372294224">(337) 229-4224</a><br>
-                <a href="https://instagram.com/gpsupplyandlumber" target="_blank" rel="noopener">@gpsupplyandlumber</a>
-              </div>
-            </div>
-          </div>
+/* Visit */
+.gp-visit{
+  padding: 3rem 0 3.2rem;
+  background: var(--paper-2);
+}
+.gp-visit-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+.gp-visit-left h2{
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  letter-spacing: -.01em;
+  font-weight: 1000;
+}
+.gp-facts{
+  display:grid;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.gp-fact{
+  padding: 1rem 1rem;
+  border: 1px solid rgba(18,18,18,.12);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.55);
+}
+.gp-fact-label{
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .78rem;
+  opacity: .7;
+  margin-bottom: .35rem;
+}
+.gp-fact-value{ font-weight: 800; }
+.gp-visit-actions{ display:flex; gap:.75rem; flex-wrap:wrap; margin-bottom: 1rem; }
 
-          <div class="gp-visit-actions">
-            <a class="gp-btn gp-btn--solid" href="tel:13372294224">Call</a>
-            <a class="gp-btn gp-btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
-            <a class="gp-btn gp-btn--ghost gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
-          </div>
+.gp-pillars{
+  display:flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+.gp-pillar{
+  padding: .55rem .85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(18,18,18,.14);
+  background: rgba(255,255,255,.35);
+  font-weight: 1000;
+}
 
-          <div class="gp-pillars" aria-label="Core pillars">
-            <div class="gp-pillar">Quality</div>
-            <div class="gp-pillar">Service</div>
-            <div class="gp-pillar">Relationship</div>
-          </div>
-        </div>
+.gp-visit-right{
+  border-radius: var(--radius);
+  overflow:hidden;
+  border: 1px solid rgba(18,18,18,.12);
+  min-height: 420px;
+  background: rgba(255,255,255,.55);
+}
+.gp-visit-right iframe{
+  width:100%;
+  height:100%;
+  min-height: 420px;
+  border:0;
+}
 
-        <div class="gp-visit-right">
-          <iframe
-            title="Map to GP Supply & Lumber"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=700%20N%20Main%20St%2C%20Loreauville%20LA%2070552&output=embed">
-          </iframe>
-        </div>
-      </div>
-    </section>
+@media (max-width: 900px){
+  .gp-visit-grid{ grid-template-columns: 1fr; }
+  .gp-visit-right{ min-height: 320px; }
+  .gp-visit-right iframe{ min-height: 320px; }
+}
 
-  </main>
+/* Footer */
+.gp-footer{
+  padding: 2rem 0;
+  background: #111;
+  color: rgba(255,255,255,.9);
+}
+.gp-footer-grid{
+  display:flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.gp-footer-brand{ font-weight: 1000; letter-spacing: .01em; }
+.gp-footer-muted{ opacity: .8; }
 
-  <footer class="gp-footer">
-    <div class="gp-shell gp-footer-grid">
-      <div>
-        <div class="gp-footer-brand">GP Supply &amp; Lumber</div>
-        <div class="gp-footer-muted">Since 1937 · Loreauville, Louisiana</div>
-      </div>
-      <div class="gp-footer-muted">
-        700 N Main St, Loreauville, LA 70552<br>
-        <a href="tel:13372294224">(337) 229-4224</a> ·
-        <a href="https://instagram.com/gpsupplyandlumber" target="_blank" rel="noopener">@gpsupplyandlumber</a> ·
-        <a class="gp-shop-link" href="#" target="_blank" rel="noopener">Shop Online</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Mobile bottom bar -->
-  <nav class="gp-mobile-cta" aria-label="Quick actions">
-    <a class="gp-mobile-cta__btn gp-mobile-cta__btn--primary gp-shop-link" href="#" target="_blank" rel="noopener">Shop</a>
-    <a class="gp-mobile-cta__btn" href="tel:13372294224">Call</a>
-    <a class="gp-mobile-cta__btn" href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
-  </nav>
-
-  <script>
-    // Single source of truth for Paladin shop URL
-    const SHOP_URL = "https://gonsoulinpricesupplyandlumber-3048.paladinshop.com";
-    document.querySelectorAll(".gp-shop-link").forEach((a) => {
-      a.href = SHOP_URL;
-      a.target = "_blank";
-      a.rel = "noopener";
-    });
-
-    // Mobile nav toggle
-    const toggle = document.querySelector('.gp-mobile-toggle');
-    const menu = document.querySelector('.gp-mobile-menu');
-
-    const closeMenu = () => {
-      toggle.classList.remove('open');
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    };
-
-    toggle.addEventListener('click', () => {
-      const isOpen = toggle.classList.toggle('open');
-      menu.classList.toggle('open', isOpen);
-      toggle.setAttribute('aria-expanded', String(isOpen));
-    });
-
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-  </script>
-</body>
-</html>
+/* Mobile bottom bar */
+.gp-mobile-cta{ display:none; }
+@media (max-width: 860px){
+  body{ padding-bottom: calc(78px + var(--safe-bottom)); }
+  .gp-mobile-cta{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .6rem;
+    position: fixed;
+    left:0; right:0; bottom:0;
+    padding: .6rem .75rem calc(.6rem + var(--safe-bottom));
+    background: rgba(17,17,17,.55);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255,255,255,.12);
+    z-index: 200;
+  }
+  .gp-mobile-cta__btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding: .85rem 1rem;
+    border-radius: 999px;
+    font-weight: 1000;
+    background: rgba(255,255,255,.92);
+    color: rgba(18,18,18,.95);
+    border: 1px solid rgba(0,0,0,.18);
+  }
+  .gp-mobile-cta__btn--primary{
+    background: rgba(245,196,65,.95);
+  }
+}
