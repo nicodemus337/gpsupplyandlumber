@@ -1,4 +1,5 @@
-/* style.css */
+/* style.css — UPDATED: “Shop Now” is understated (outlined), Rivers-ish */
+
 :root{
   --ink: #121212;
   --paper: #f6f2ea;
@@ -83,12 +84,18 @@ img{ max-width:100%; display:block; }
 }
 .desktop-nav a:hover{ border-bottom-color: rgba(255,255,255,.7); }
 
+/* UPDATED: Nav CTA is now subtle (outlined), not yellow */
 .gp-nav-cta{
   padding: .55rem .9rem !important;
   border-radius: 999px;
-  background: rgba(245,196,65,.95);
-  color: rgba(18,18,18,.95) !important;
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.95) !important;
   border-bottom: none !important;
+}
+.gp-nav-cta:hover{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.75);
 }
 
 /* Mobile toggle */
@@ -191,7 +198,7 @@ img{ max-width:100%; display:block; }
   margin-bottom: 1.1rem;
 }
 
-/* Quiet buttons */
+/* UPDATED: Buttons are understated (outline + quiet fill) */
 .gp-btn{
   display:inline-flex;
   align-items:center;
@@ -200,16 +207,31 @@ img{ max-width:100%; display:block; }
   border-radius: 999px;
   font-weight: 950;
   letter-spacing: .01em;
-  border: 1px solid rgba(255,255,255,.28);
+  border: 1px solid rgba(255,255,255,.45);
+  transition: background .12s ease, border-color .12s ease, transform .06s ease;
 }
+.gp-btn:active{ transform: translateY(1px); }
+
+/* Shop / primary becomes “outline” */
 .gp-btn--solid{
-  background: rgba(245,196,65,.95);
-  color: rgba(18,18,18,.95);
-  border-color: rgba(0,0,0,.25);
-}
-.gp-btn--ghost{
   background: rgba(255,255,255,.10);
+  color: #fff;
+  border-color: rgba(255,255,255,.60);
+}
+.gp-btn--solid:hover{
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.78);
+}
+
+/* Secondary stays ghosty */
+.gp-btn--ghost{
+  background: rgba(255,255,255,.06);
   color:#fff;
+  border-color: rgba(255,255,255,.30);
+}
+.gp-btn--ghost:hover{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.46);
 }
 
 .gp-quick-facts{
@@ -389,7 +411,7 @@ img{ max-width:100%; display:block; }
   padding: 1.2rem 1.1rem;
   border-radius: var(--radius);
   border: 1px solid rgba(18,18,18,.12);
-  background: rgba(245,196,65,.18);
+  background: rgba(18,18,18,.04);
   display:flex;
   align-items:center;
   justify-content: space-between;
@@ -503,6 +525,7 @@ img{ max-width:100%; display:block; }
     border-top: 1px solid rgba(255,255,255,.12);
     z-index: 200;
   }
+  /* UPDATED: mobile bar is subtle too */
   .gp-mobile-cta__btn{
     display:inline-flex;
     align-items:center;
@@ -515,6 +538,6 @@ img{ max-width:100%; display:block; }
     border: 1px solid rgba(0,0,0,.18);
   }
   .gp-mobile-cta__btn--primary{
-    background: rgba(245,196,65,.95);
+    background: rgba(255,255,255,.92);
   }
 }
