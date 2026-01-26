@@ -1,4 +1,6 @@
-/* style.css — UPDATED: “Shop Now” is understated (outlined), Rivers-ish */
+/* style.css — UPDATED: “Shop Now” is understated (outlined), Rivers-ish
+   + Added: fast aisle thumbnails + lightbox classes for services.html
+*/
 
 :root{
   --ink: #121212;
@@ -25,6 +27,13 @@ body{
 
 a{ color: inherit; text-decoration: none; }
 img{ max-width:100%; display:block; }
+
+/* Optional: improve keyboard focus visibility */
+:focus-visible{
+  outline: 3px solid rgba(44, 91, 44, .55);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
 
 .gp-shell{
   max-width: var(--max);
@@ -541,11 +550,13 @@ img{ max-width:100%; display:block; }
     background: rgba(255,255,255,.92);
   }
 }
+
 /* ================================
    Interior pages (solid header)
 ================================ */
 .gp-header--solid{
   position: sticky;
+  top: 0;
   background: #111;
   padding: .65rem 0;
 }
@@ -610,6 +621,7 @@ img{ max-width:100%; display:block; }
 .desktop-nav a[aria-current="page"]{
   border-bottom-color: rgba(255,255,255,.9);
 }
+
 /* ================================
    Media frames (no dead space)
 ================================ */
@@ -634,3 +646,91 @@ img{ max-width:100%; display:block; }
 /* If you still have old min-heights in the gallery, kill them */
 .gp-gallery-item,
 .gp-gallery-item--wide { min-height: unset !important; }
+
+/* ================================
+   Services: Aisle thumbnails + lightbox
+   (Matches classes in regenerated services.html)
+================================ */
+
+/* Thumb grid (if you remove inline styles later) */
+.gp-aisle-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+/* Thumb button */
+.gp-aisle-thumb{
+  border:0;
+  padding:0;
+  background:transparent;
+  cursor:pointer;
+}
+
+/* Thumb image */
+.gp-aisle-thumb img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius: 14px;
+  background: rgba(0,0,0,.05);
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+  transition: transform .08s ease, box-shadow .12s ease;
+}
+.gp-aisle-thumb:hover img{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.14);
+}
+
+/* Lightbox overlay */
+.gp-aisle-lightbox{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+}
+.gp-aisle-backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.72);
+}
+.gp-aisle-panel{
+  position:relative;
+  max-width: min(1100px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  margin: 16px auto;
+  padding: 12px;
+  background: #111;
+  border-radius: 16px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+}
+.gp-aisle-full{
+  width:100%;
+  height:auto;
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+  display:block;
+  border-radius: 12px;
+  background: rgba(255,255,255,.02);
+}
+.gp-aisle-caption{
+  margin-top: 10px;
+  color: rgba(255,255,255,.85);
+  font-size: .95rem;
+}
+.gp-aisle-close{
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor:pointer;
+  background: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.92);
+}
+.gp-aisle-close:hover{
+  background: rgba(255,255,255,.16);
+}
+
+/* Prevent scroll behind modal */
+.gp-no-scroll{ overflow:hidden; }
