@@ -92,8 +92,6 @@
 
         <div class="gp-divider"></div>
 
-    
-
         <div class="gp-divider"></div>
 
         <div class="gp-two-col">
@@ -111,7 +109,7 @@
           </figure>
         </div>
 
-        <!-- NEW: IN THE AISLES (panoramas) -->
+        <!-- IN THE AISLES (FAST THUMBNAILS + CLICK TO VIEW FULL) -->
         <div class="gp-divider"></div>
 
         <section id="aisles" aria-label="In the aisles">
@@ -123,32 +121,116 @@
             </p>
           </div>
 
-          <div style="display:grid; gap:1rem;">
-            <figure class="gp-photo" style="margin:0; aspect-ratio: 21 / 9;">
-              <img src="images/aisle.blades.JPG" alt="Aisle wall: cutting, grinding, blades, and jobsite accessories" loading="lazy" decoding="async">
-            </figure>
+          <!--
+            IMPORTANT:
+            - Create smaller thumbnail files (recommended) and point src= to those.
+            - data-full should point to your full-res image.
+            - If you don't have thumbs yet, you can temporarily point src= to the same full file,
+              but the big speed win comes from real thumbnail images.
+          -->
+          <div class="gp-aisle-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px;">
+            <button class="gp-aisle-thumb" type="button"
+              data-full="images/aisle.blades.JPG"
+              data-alt="Aisle wall: cutting, grinding, blades, and jobsite accessories"
+              style="border:0; padding:0; background:transparent; cursor:pointer;">
+              <img
+                src="images/thumbs/aisle.blades.webp"
+                alt="Aisle wall: cutting, grinding, blades, and jobsite accessories"
+                width="480" height="270"
+                loading="lazy"
+                decoding="async"
+                style="width:100%; height:auto; display:block; border-radius:10px;"
+                onerror="this.onerror=null; this.src='images/aisle.blades.JPG';"
+              >
+            </button>
 
-            <figure class="gp-photo" style="margin:0; aspect-ratio: 21 / 9;">
-              <img src="images/aisle.blue.JPG" alt="Aisle wall: plumbing parts, fittings, and small repair components" loading="lazy" decoding="async">
-            </figure>
+            <button class="gp-aisle-thumb" type="button"
+              data-full="images/aisle.blue.JPG"
+              data-alt="Aisle wall: plumbing parts, fittings, and small repair components"
+              style="border:0; padding:0; background:transparent; cursor:pointer;">
+              <img
+                src="images/thumbs/aisle.blue.webp"
+                alt="Aisle wall: plumbing parts, fittings, and small repair components"
+                width="480" height="270"
+                loading="lazy"
+                decoding="async"
+                style="width:100%; height:auto; display:block; border-radius:10px;"
+                onerror="this.onerror=null; this.src='images/aisle.blue.JPG';"
+              >
+            </button>
 
-            <figure class="gp-photo" style="margin:0; aspect-ratio: 21 / 9;">
-              <img src="images/aisle.green.JPG" alt="Aisle wall: cleaning supplies, mops, brooms, brushes, and maintenance items" loading="lazy" decoding="async">
-            </figure>
+            <button class="gp-aisle-thumb" type="button"
+              data-full="images/aisle.green.JPG"
+              data-alt="Aisle wall: cleaning supplies, mops, brooms, brushes, and maintenance items"
+              style="border:0; padding:0; background:transparent; cursor:pointer;">
+              <img
+                src="images/thumbs/aisle.green.webp"
+                alt="Aisle wall: cleaning supplies, mops, brooms, brushes, and maintenance items"
+                width="480" height="270"
+                loading="lazy"
+                decoding="async"
+                style="width:100%; height:auto; display:block; border-radius:10px;"
+                onerror="this.onerror=null; this.src='images/aisle.green.JPG';"
+              >
+            </button>
 
-            <figure class="gp-photo" style="margin:0; aspect-ratio: 21 / 9;">
-              <img src="images/aisle.packs.JPG" alt="Aisle wall: hooks, hangers, fasteners, and packaged hardware" loading="lazy" decoding="async">
-            </figure>
+            <button class="gp-aisle-thumb" type="button"
+              data-full="images/aisle.packs.JPG"
+              data-alt="Aisle wall: hooks, hangers, fasteners, and packaged hardware"
+              style="border:0; padding:0; background:transparent; cursor:pointer;">
+              <img
+                src="images/thumbs/aisle.packs.webp"
+                alt="Aisle wall: hooks, hangers, fasteners, and packaged hardware"
+                width="480" height="270"
+                loading="lazy"
+                decoding="async"
+                style="width:100%; height:auto; display:block; border-radius:10px;"
+                onerror="this.onerror=null; this.src='images/aisle.packs.JPG';"
+              >
+            </button>
 
-            <figure class="gp-photo" style="margin:0; aspect-ratio: 21 / 9;">
-              <img src="images/aisle.tools.jpg" alt="Aisle wall: hand tools, clamps, cutting tools, and shop essentials" loading="lazy" decoding="async">
-            </figure>
+            <button class="gp-aisle-thumb" type="button"
+              data-full="images/aisle.tools.jpg"
+              data-alt="Aisle wall: hand tools, clamps, cutting tools, and shop essentials"
+              style="border:0; padding:0; background:transparent; cursor:pointer;">
+              <img
+                src="images/thumbs/aisle.tools.webp"
+                alt="Aisle wall: hand tools, clamps, cutting tools, and shop essentials"
+                width="480" height="270"
+                loading="lazy"
+                decoding="async"
+                style="width:100%; height:auto; display:block; border-radius:10px;"
+                onerror="this.onerror=null; this.src='images/aisle.tools.jpg';"
+              >
+            </button>
 
-            <figure class="gp-photo" style="margin:0; aspect-ratio: 21 / 9;">
-              <img src="images/aisle.yellow.JPG" alt="Aisle wall: levels, measuring tools, and yellow-tag tool inventory" loading="lazy" decoding="async">
-            </figure>
+            <button class="gp-aisle-thumb" type="button"
+              data-full="images/aisle.yellow.JPG"
+              data-alt="Aisle wall: levels, measuring tools, and yellow-tag tool inventory"
+              style="border:0; padding:0; background:transparent; cursor:pointer;">
+              <img
+                src="images/thumbs/aisle.yellow.webp"
+                alt="Aisle wall: levels, measuring tools, and yellow-tag tool inventory"
+                width="480" height="270"
+                loading="lazy"
+                decoding="async"
+                style="width:100%; height:auto; display:block; border-radius:10px;"
+                onerror="this.onerror=null; this.src='images/aisle.yellow.JPG';"
+              >
+            </button>
           </div>
         </section>
+
+        <!-- LIGHTBOX (loads full image only when clicked) -->
+        <div class="gp-aisle-lightbox" hidden>
+          <div class="gp-aisle-backdrop" data-close></div>
+
+          <figure class="gp-aisle-panel" role="dialog" aria-modal="true" aria-label="Photo viewer">
+            <button class="gp-aisle-close" type="button" data-close aria-label="Close">✕</button>
+            <img class="gp-aisle-full" alt="" />
+            <figcaption class="gp-aisle-caption"></figcaption>
+          </figure>
+        </div>
 
         <div class="gp-divider"></div>
 
@@ -205,6 +287,98 @@
     });
     menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+    // Aisles lightbox
+    (function () {
+      const lb = document.querySelector(".gp-aisle-lightbox");
+      const lbImg = document.querySelector(".gp-aisle-full");
+      const lbCap = document.querySelector(".gp-aisle-caption");
+
+      function openLightbox(fullSrc, altText) {
+        if (!lb) return;
+        lb.hidden = false;
+        document.body.classList.add("gp-no-scroll");
+
+        lbImg.src = "";
+        lbImg.alt = altText || "";
+        lbCap.textContent = altText || "";
+
+        const img = new Image();
+        img.decoding = "async";
+        img.onload = () => { lbImg.src = fullSrc; };
+        img.src = fullSrc;
+      }
+
+      function closeLightbox() {
+        if (!lb) return;
+        lb.hidden = true;
+        document.body.classList.remove("gp-no-scroll");
+        lbImg.src = "";
+        lbImg.alt = "";
+        lbCap.textContent = "";
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".gp-aisle-thumb");
+        if (btn) {
+          openLightbox(btn.dataset.full, btn.dataset.alt);
+          return;
+        }
+        if (e.target.matches("[data-close]")) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (lb && !lb.hidden && e.key === "Escape") closeLightbox();
+      });
+    })();
   </script>
+
+  <style>
+    /* Lightbox styles kept here so services.html works even if you don't touch style.css */
+    .gp-no-scroll{ overflow:hidden; }
+
+    .gp-aisle-lightbox{
+      position:fixed;
+      inset:0;
+      z-index:9999;
+    }
+    .gp-aisle-backdrop{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.70);
+    }
+    .gp-aisle-panel{
+      position:relative;
+      max-width:min(1100px, calc(100vw - 32px));
+      max-height:calc(100vh - 32px);
+      margin:16px auto;
+      padding:12px;
+      background:#111;
+      border-radius:14px;
+      box-shadow:0 18px 60px rgba(0,0,0,.45);
+    }
+    .gp-aisle-full{
+      width:100%;
+      height:auto;
+      max-height:calc(100vh - 140px);
+      object-fit:contain;
+      display:block;
+      border-radius:10px;
+    }
+    .gp-aisle-caption{
+      margin-top:10px;
+      color:rgba(255,255,255,.85);
+      font-size:.95rem;
+    }
+    .gp-aisle-close{
+      position:absolute;
+      top:10px;
+      right:10px;
+      border:0;
+      border-radius:10px;
+      padding:8px 10px;
+      cursor:pointer;
+    }
+  </style>
 </body>
 </html>
