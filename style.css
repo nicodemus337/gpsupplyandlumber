@@ -843,3 +843,35 @@ img{ max-width:100%; display:block; }
     gap: 0.75rem;
   }
 }
+/* =========================================
+   MOBILE INTERIOR BUTTON VISIBILITY FIX
+   This is the real issue.
+========================================= */
+
+@media (max-width: 860px) {
+
+  /* Any button on light backgrounds */
+  .gp-page .gp-btn,
+  .gp-block .gp-btn,
+  .gp-cta-band .gp-btn {
+    background: #2c5b2c !important;
+    color: #ffffff !important;
+    border-color: #2c5b2c !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Ghost buttons become outlined green */
+  .gp-page .gp-btn--ghost,
+  .gp-block .gp-btn--ghost {
+    background: transparent !important;
+    color: #2c5b2c !important;
+    border-color: #2c5b2c !important;
+  }
+
+  /* Tap feedback (important on iOS) */
+  .gp-page .gp-btn:active {
+    background: #1f4520 !important;
+    border-color: #1f4520 !important;
+  }
+}
