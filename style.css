@@ -793,85 +793,50 @@ img{ max-width:100%; display:block; }
 .gp-btn--ghost:hover {
   background: rgba(44, 91, 44, 0.08) !important;
 }
-/* =========================
-   MOBILE CTA BUTTON FIX
-   gplumberandsupply
-   ========================= */
+/* ==================================================
+   TWO-BUTTON SYSTEM
+   Do not change existing buttons.
+   Opt-in only via modifier classes.
+================================================== */
 
-@media (max-width: 768px) {
-
-  /* Ensure buttons span full width and stack cleanly */
-  .gp-cta,
-  .gp-button,
-  .shop-now,
-  .cta-button {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    padding: 0.9rem 1.1rem;
-    font-size: 1rem;
-    text-align: center;
-    border-radius: var(--radius);
-    white-space: normal;        /* prevents text clipping */
-    line-height: 1.3;
-  }
-
-  /* Kill hover-only styling on touch devices */
-  .gp-cta:hover,
-  .gp-button:hover,
-  .shop-now:hover,
-  .cta-button:hover {
-    background: transparent;
-    color: var(--ink);
-  }
-
-  /* Explicit tap state (iOS + Android) */
-  .gp-cta:active,
-  .gp-button:active,
-  .shop-now:active,
-  .cta-button:active {
-    background: var(--accent);
-    color: #fff;
-  }
-
-  /* Prevent parent flex containers from collapsing width */
-  .gp-actions,
-  .cta-row,
-  .button-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.75rem;
-  }
+/* ===== Buttons on DARK backgrounds (default) ===== */
+/* Uses your existing styling — no changes here */
+.gp-btn--on-dark {
+  /* intentionally empty
+     this class exists for semantic clarity */
 }
-/* =========================================
-   MOBILE INTERIOR BUTTON VISIBILITY FIX
-   This is the real issue.
-========================================= */
 
+/* ===== Buttons on LIGHT backgrounds ===== */
+.gp-btn--on-light {
+  background: #2c5b2c;
+  color: #ffffff;
+  border-color: #2c5b2c;
+}
+
+/* Hover / focus */
+.gp-btn--on-light:hover,
+.gp-btn--on-light:focus-visible {
+  background: #1f4520;
+  border-color: #1f4520;
+  color: #ffffff;
+}
+
+/* Ghost variant on light backgrounds */
+.gp-btn--on-light.gp-btn--ghost {
+  background: transparent;
+  color: #2c5b2c;
+  border-color: #2c5b2c;
+}
+
+.gp-btn--on-light.gp-btn--ghost:hover,
+.gp-btn--on-light.gp-btn--ghost:focus-visible {
+  background: rgba(44, 91, 44, 0.08);
+}
+
+/* Mobile ergonomics */
 @media (max-width: 860px) {
-
-  /* Any button on light backgrounds */
-  .gp-page .gp-btn,
-  .gp-block .gp-btn,
-  .gp-cta-band .gp-btn {
-    background: #2c5b2c !important;
-    color: #ffffff !important;
-    border-color: #2c5b2c !important;
+  .gp-btn--on-light {
     width: 100%;
     text-align: center;
-  }
-
-  /* Ghost buttons become outlined green */
-  .gp-page .gp-btn--ghost,
-  .gp-block .gp-btn--ghost {
-    background: transparent !important;
-    color: #2c5b2c !important;
-    border-color: #2c5b2c !important;
-  }
-
-  /* Tap feedback (important on iOS) */
-  .gp-page .gp-btn:active {
-    background: #1f4520 !important;
-    border-color: #1f4520 !important;
   }
 }
