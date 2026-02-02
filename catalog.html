@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Full Supplier Catalog — GP Supply & Lumber</title>
+  <meta name="description" content="Browse GP Supply & Lumber’s full supplier catalog. Thousands of items available by special order through our suppliers." />
+  <meta name="theme-color" content="#111111" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<a class="gp-skip" href="#main">Skip to content</a>
+
+<!-- HEADER -->
+<header class="gp-header">
+  <div class="gp-shell gp-nav">
+    <a class="gp-brand" href="index.html" aria-label="GP Supply & Lumber Home">
+      <img class="gp-logo" src="images/gp-logo-white.png" alt="GP Supply & Lumber logo">
+      <span class="gp-brand-text">
+        <span class="gp-brand-name">GP Supply &amp; Lumber</span>
+        <span class="gp-brand-since">Since 1937</span>
+      </span>
+    </a>
+
+<nav class="gp-nav-links desktop-nav" aria-label="Primary">
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="catalog.html">Catalog</a>
+  <a class="gp-nav-cta gp-shop-instock" href="#">Shop In-Stock</a>
+</nav>
+
+
+
+    <button class="gp-mobile-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="gp-mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+<nav id="gp-mobile-menu" class="gp-mobile-menu" aria-label="Mobile">
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="catalog.html">Catalog</a>
+  <a class="gp-shop-instock" href="#">Shop In-Stock</a>
+  <a href="tel:13372294224">Call</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
+</nav>
+</header>
+
+<main id="main">
+
+<!-- CATALOG INTRO -->
+<section class="gp-intro" aria-label="Supplier catalog introduction">
+  <div class="gp-shell gp-intro-grid">
+    <h1 class="gp-kicker">Full Supplier Catalog</h1>
+    <div class="gp-intro-copy">
+      <p>
+        This catalog shows the broader selection of items we can order through our suppliers.
+        Not all items shown here are stocked in our store.
+      </p>
+      <p>
+        If you need something quickly or want to confirm availability, give us a call —
+        we’ll help you source it.
+      </p>
+
+      <div class="gp-intro-actions">
+        <a class="gp-btn gp-btn--solid gp-shop-instock" href="#">Shop In-Stock Items</a>
+        <a class="gp-btn gp-btn--ghost" href="contact.html">Contact the Yard</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPECTATIONS -->
+<section class="gp-services" aria-label="Catalog expectations">
+  <div class="gp-shell">
+    <div class="gp-services-grid">
+      <article class="gp-service">
+        <h3>What This Is</h3>
+        <p>
+          An extended supplier catalog showing thousands of products available by special order
+          through GP Supply &amp; Lumber.
+        </p>
+      </article>
+
+      <article class="gp-service">
+        <h3>What This Is Not</h3>
+        <p>
+          A live reflection of what’s on our shelves today. Availability and lead times may vary.
+        </p>
+      </article>
+
+      <article class="gp-service">
+        <h3>Best Way to Use It</h3>
+        <p>
+          Find what you need, then call or stop by. We’ll confirm pricing, availability,
+          and timing.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ORGILL IFRAME -->
+<section class="gp-catalog" aria-label="Supplier catalog">
+  <div class="gp-shell">
+    <iframe
+      title="GP Supply & Lumber Supplier Catalog"
+      src="https://459.orgill-prodecatalog5.us-central1.gcp.storefrontcloud.io/c/all-categories"
+      width="100%"
+      height="1600"
+      frameborder="0"
+      loading="lazy"
+      style="margin:2em auto 0; width:100%;">
+    </iframe>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="gp-footer">
+  <div class="gp-shell gp-footer-grid">
+    <div>
+      <div class="gp-footer-brand">GP Supply &amp; Lumber</div>
+      <div class="gp-footer-muted">Since 1937 · Loreauville, Louisiana</div>
+    </div>
+    <div class="gp-footer-muted">
+      <a class="gp-shop-instock" href="#">Shop In-Stock</a> ·
+      <a href="contact.html">Hours &amp; Map</a>
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script>
+  const IN_STOCK_URL = "https://gonsoulinpricesupplyandlumber-3048.paladinshop.com/Store";
+
+  document.querySelectorAll(".gp-shop-instock").forEach(a => {
+    a.href = IN_STOCK_URL;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  const toggle = document.querySelector('.gp-mobile-toggle');
+  const menu = document.querySelector('.gp-mobile-menu');
+
+  toggle.addEventListener('click', () => {
+    const open = toggle.classList.toggle('open');
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
+</body>
+</html>

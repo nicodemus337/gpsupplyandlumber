@@ -3,252 +3,245 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>About — GP Supply & Lumber</title>
   <meta name="description" content="Nearly 90 years on the same corner in Loreauville, Louisiana. GP Supply & Lumber — generations rooted in service and supply." />
   <meta name="theme-color" content="#111111" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <a class="gp-skip" href="#main">Skip to content</a>
+<a class="gp-skip" href="#main">Skip to content</a>
 
-  <!-- SOLID HEADER (fixes logo visibility on light backgrounds) -->
-  <header class="gp-header gp-header--solid">
-    <div class="gp-shell gp-nav">
-      <a class="gp-brand" href="index.html" aria-label="GP Supply & Lumber Home">
-        <img class="gp-logo" src="images/gp-logo-white.png" alt="GP Supply & Lumber logo">
-        <span class="gp-brand-text">
-          <span class="gp-brand-name">GP Supply &amp; Lumber</span>
-          <span class="gp-brand-since">Since 1937</span>
-        </span>
-      </a>
+<!-- HEADER -->
+<header class="gp-header gp-header--solid">
+  <div class="gp-shell gp-nav">
+    <a class="gp-brand" href="index.html" aria-label="GP Supply & Lumber Home">
+      <img class="gp-logo" src="images/gp-logo-white.png" alt="GP Supply & Lumber logo">
+      <span class="gp-brand-text">
+        <span class="gp-brand-name">GP Supply &amp; Lumber</span>
+        <span class="gp-brand-since">Since 1937</span>
+      </span>
+    </a>
 
-      <nav class="gp-nav-links desktop-nav" aria-label="Primary">
-        <a href="services.html">Services</a>
-        <a href="about.html" aria-current="page">About</a>
-        <a href="contact.html">Contact</a>
-        <a class="gp-nav-cta gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
-      </nav>
-
-      <button class="gp-mobile-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="gp-mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <nav id="gp-mobile-menu" class="gp-mobile-menu" aria-label="Mobile">
+    <nav class="gp-nav-links desktop-nav" aria-label="Primary">
       <a href="services.html">Services</a>
       <a href="about.html" aria-current="page">About</a>
       <a href="contact.html">Contact</a>
-      <a class="gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
-      <a href="tel:13372294224">Call</a>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
+      <a href="catalog.html">Catalog</a>
+      <a class="gp-nav-cta gp-shop-instock" href="#">Shop In-Stock</a>
     </nav>
-  </header>
 
-  <main id="main">
+    <button class="gp-mobile-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="gp-mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 
-    <!-- HERO (like index) -->
-    <section class="gp-hero" aria-label="About hero" style="min-height: 62vh; padding: 4.75rem 0 2.6rem;">
-      <div class="gp-hero-media" aria-hidden="true">
-        <img src="images/new.ownership.JPG" alt="">
-      </div>
+  <!-- MOBILE NAV -->
+  <nav id="gp-mobile-menu" class="gp-mobile-menu" aria-label="Mobile">
+    <a href="services.html">Services</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="catalog.html">Catalog</a>
+    <a class="gp-shop-instock" href="#">Shop In-Stock</a>
+    <a href="tel:13372294224">Call</a>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
+  </nav>
+</header>
 
-      <div class="gp-shell gp-hero-inner">
-        <p class="gp-eyebrow">About</p>
-        <h1 class="gp-hero-title">Same building. Same purpose.</h1>
-        <p class="gp-hero-sub">
-          Supply and service for the people who keep this place built and working.
+<main id="main">
+
+<!-- HERO -->
+<section class="gp-hero" aria-label="About hero" style="min-height:62vh; padding:4.75rem 0 2.6rem;">
+  <div class="gp-hero-media" aria-hidden="true">
+    <img src="images/new.ownership.JPG" alt="">
+  </div>
+
+  <div class="gp-shell gp-hero-inner">
+    <p class="gp-eyebrow">About</p>
+    <h1 class="gp-hero-title">Same building. Same purpose.</h1>
+    <p class="gp-hero-sub">
+      Supply and service for the people who keep this place built and working.
+    </p>
+
+    <div class="gp-hero-actions">
+      <a class="gp-btn gp-btn--solid gp-shop-instock" href="#">Shop In-Stock</a>
+      <a class="gp-btn gp-btn--ghost" href="contact.html">Hours &amp; Map</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="gp-page" style="padding-top:2.6rem;">
+  <div class="gp-shell">
+
+    <!-- ROOTS -->
+    <div class="gp-two-col">
+      <div class="gp-block">
+        <h2>Generations rooted in Loreauville</h2>
+        <p>
+          GP Supply &amp; Lumber has served this community since 1937. We’re keeping what matters:
+          dependable inventory, honest help, and a place you can count on when work needs doing.
         </p>
 
-        <div class="gp-hero-actions">
-          <a class="gp-btn gp-btn--solid gp-shop-link" href="#" target="_blank" rel="noopener">Shop Now</a>
-          <a class="gp-btn gp-btn--ghost" href="contact.html">Hours &amp; Map</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTENT -->
-    <section class="gp-page" style="padding-top: 2.6rem;">
-      <div class="gp-shell">
-
-        <div class="gp-two-col">
-          <div class="gp-block">
-            <h2 style="margin:0 0 .55rem; font-weight:1000;">Generations rooted in Loreauville</h2>
-            <p style="margin:0; opacity:.86;">
-              GP Supply &amp; Lumber has served this community since 1937. We’re keeping what matters:
-              dependable inventory, honest help, and a place you can count on when work needs doing.
-            </p>
-
-            <div class="gp-divider"></div>
-
-            <h3 style="margin:.1rem 0 .45rem; font-weight:1000;">What we believe</h3>
-            <ul class="gp-list">
-              <li>Good service is part of the product.</li>
-              <li>Inventory matters—especially when time matters.</li>
-              <li>Relationships are the long game.</li>
-            </ul>
-
-            <div style="height: .9rem;"></div>
-            <a class="gp-text-link" href="services.html">See services →</a>
-          </div>
-
-          <!-- Clean photo frame (no gray dead space) -->
-          <figure class="gp-photo gp-photo--wide" style="margin:0;">
-            <img src="images/interior.entrance.JPG"
-                 alt="Inside GP Supply & Lumber"
-                 loading="lazy" decoding="async">
-          </figure>
-        </div>
-
-        <!-- OWNERS / PEOPLE -->
         <div class="gp-divider"></div>
 
-        <div class="gp-two-col">
-          <div class="gp-block">
-            <h2 style="margin:0 0 .45rem; font-weight:1000;">Meet the owners</h2>
-            <p style="margin:0; opacity:.86;">
-              GP Supply &amp; Lumber is locally owned and operated—built around real inventory and real service.
-              If you’re not sure what you need, tell us the job. We’ll point you to what works.
-            </p>
+        <h3>What we believe</h3>
+        <ul class="gp-list">
+          <li>Good service is part of the product.</li>
+          <li>Inventory matters—especially when time matters.</li>
+          <li>Relationships are the long game.</li>
+        </ul>
 
-            <div class="gp-divider"></div>
-
-            <h3 style="margin:0 0 .35rem; font-weight:1000;">Shannon Gonsoulin</h3>
-            <p style="margin:0; opacity:.86;">
-              <strong>Role:</strong> Store operations<br>
-              <strong>Known for:</strong> Service—steady help, clear answers, and keeping the hometown yard strong.
-            </p>
-            <p style="margin:.7rem 0 0; opacity:.86;">
-              Shannon has been coming to this store since he was a little boy in the late ’70s—walking in with his father
-              and grandfather anytime they needed something. Through his life, when it was time to get supplies, hardware,
-              or the right part for the job, this is where he came. He cares about keeping business in his hometown, about
-              the history behind this corner, and about continuing the kind of service the store has provided for nearly 90 years.
-              Customers should know this: we are highly service-oriented—and we mean it.
-            </p>
-
-            <div class="gp-divider"></div>
-
-            <h3 style="margin:0 0 .35rem; font-weight:1000;">Dan Price</h3>
-            <p style="margin:0; opacity:.86;">
-              <strong>Role:</strong> Store operations<br>
-              <strong>Known for:</strong> Helping you track down hard-to-find items—and getting you exactly what you’re looking for.
-            </p>
-            <p style="margin:.7rem 0 0; opacity:.86;">
-              Dan is Loreauville-grown, and he came back home to his roots. Day to day, he’s in the middle of sales, ordering
-              specialty items and fasteners, and keeping the right inventory on hand. He’s built a lifetime network of contacts,
-              which is why he can usually find what others can’t. His customers are his friends—and that shows in how he handles
-              service: straight answers, steady follow-through, and a reputation for honesty and reliability. He also leads hiring
-              and training as the store grows, helping new employees learn the inventory and the standard: take care of people.
-            </p>
-
-            <div class="gp-divider"></div>
-
-          </div>
-
-          <!-- Photo placeholder for owners (swap image when ready) -->
-          <figure class="gp-photo gp-photo--wide" style="margin:0;">
-            <img src="images/new.ownership.JPG"
-                 alt="GP Supply & Lumber ownership"
-                 loading="lazy" decoding="async">
-          </figure>
-        </div>
-
-        <div class="gp-divider"></div>
-
-        <div class="gp-section-head">
-          <h2>Then and now</h2>
-          <p>Nearly 90 years of continuity—through different eras, the same job: keep the town supplied.</p>
-        </div>
-
-        <div class="gp-story-grid">
-          <figure class="gp-story-card">
-            <img src="images/storefront-1937.png" alt="Storefront in 1937" loading="lazy" decoding="async">
-            <figcaption>1937</figcaption>
-          </figure>
-          <figure class="gp-story-card">
-            <img src="images/storefront-2025.JPG" alt="Storefront in 2025" loading="lazy" decoding="async">
-            <figcaption>2025</figcaption>
-          </figure>
-          <figure class="gp-story-card">
-            <img src="images/storefront-2026.JPG" alt="Storefront in 2026" loading="lazy" decoding="async">
-            <figcaption>2026</figcaption>
-          </figure>
-        </div>
-
-        <div class="gp-divider"></div>
-
-        <!-- Second “about” band: working store + CTA -->
-        <div class="gp-two-col">
-          <div class="gp-block">
-            <h2 style="margin:0 0 .45rem; font-weight:1000;">A working store for working people</h2>
-            <p style="margin:0; opacity:.86;">
-              This isn’t a showroom. It’s a place where projects start and problems get solved.
-              If you’re not sure what you need, bring what you’ve got—we’ll help you match it.
-            </p>
-
-            <div style="height: 1rem;"></div>
-
-            <div style="display:flex; gap:.75rem; flex-wrap:wrap;">
-              <a class="gp-btn gp-btn--solid" href="services.html">Explore services</a>
-              <a class="gp-btn gp-btn--ghost gp-shop-link" href="#" target="_blank" rel="noopener">Shop online</a>
-            </div>
-          </div>
-
-          <figure class="gp-photo gp-photo--wide" style="margin:0;">
-            <img src="images/lumber.JPG" alt="Lumber and building materials" loading="lazy" decoding="async">
-          </figure>
-        </div>
-
+        <a class="gp-text-link" href="services.html">See services →</a>
       </div>
-    </section>
-  </main>
 
-  <footer class="gp-footer">
-    <div class="gp-shell gp-footer-grid">
-      <div>
-        <div class="gp-footer-brand">GP Supply &amp; Lumber</div>
-        <div class="gp-footer-muted">Since 1937 · Loreauville, Louisiana</div>
-      </div>
-      <div class="gp-footer-muted">
-        700 N Main St, Loreauville, LA 70552<br>
-        <a href="tel:13372294224">(337) 229-4224</a> ·
-        <a href="https://instagram.com/gpsupplyandlumber" target="_blank" rel="noopener">@gpsupplyandlumber</a> ·
-        <a class="gp-shop-link" href="#" target="_blank" rel="noopener">Shop Online</a>
-      </div>
+      <figure class="gp-photo gp-photo--wide">
+        <img src="images/interior.entrance.JPG"
+             alt="Inside GP Supply & Lumber"
+             loading="lazy" decoding="async">
+      </figure>
     </div>
-  </footer>
 
-  <nav class="gp-mobile-cta" aria-label="Quick actions">
-    <a class="gp-mobile-cta__btn gp-mobile-cta__btn--primary gp-shop-link" href="#" target="_blank" rel="noopener">Shop</a>
-    <a class="gp-mobile-cta__btn" href="tel:13372294224">Call</a>
-    <a class="gp-mobile-cta__btn" href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
-  </nav>
+    <div class="gp-divider"></div>
 
-  <script>
-    const SHOP_URL = "https://gonsoulinpricesupplyandlumber-3048.paladinshop.com";
-    document.querySelectorAll(".gp-shop-link").forEach((a) => {
-      a.href = SHOP_URL;
-      a.target = "_blank";
-      a.rel = "noopener";
-    });
+    <!-- OWNERS -->
+    <div class="gp-two-col">
+      <div class="gp-block">
+        <h2>Meet the owners</h2>
+        <p>
+          GP Supply &amp; Lumber is locally owned and operated—built around real inventory and real service.
+          Tell us the job. We’ll point you to what works.
+        </p>
 
-    const toggle = document.querySelector('.gp-mobile-toggle');
-    const menu = document.querySelector('.gp-mobile-menu');
+        <div class="gp-divider"></div>
 
-    const closeMenu = () => {
-      toggle.classList.remove('open');
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    };
+        <h3>Shannon Gonsoulin</h3>
+        <p>
+          <strong>Role:</strong> Store operations<br>
+          <strong>Known for:</strong> Steady help, clear answers, and keeping the hometown yard strong.
+        </p>
+        <p>
+          Shannon has been walking into this store since the late ’70s with his father and grandfather.
+          When something needed fixing, this was the stop. He cares about keeping business local,
+          honoring the history of this area, and maintaining the level of service this store
+          has been known for nearly 90 years.
+        </p>
 
-    toggle?.addEventListener('click', () => {
-      const isOpen = toggle.classList.toggle('open');
-      menu.classList.toggle('open', isOpen);
-      toggle.setAttribute('aria-expanded', String(isOpen));
-    });
+        <div class="gp-divider"></div>
 
-    menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-  </script>
+        <h3>Dan Price</h3>
+        <p>
+          <strong>Role:</strong> Store operations<br>
+          <strong>Known for:</strong> Finding hard-to-track items and getting customers exactly what they need.
+        </p>
+        <p>
+          Dan is Loreauville-grown and came back home to his roots. He handles sales, specialty ordering,
+          and inventory flow day to day. With a lifetime network of contacts, he can usually source what
+          others can’t. His customers are his friends—and his reputation is built on follow-through,
+          honesty, and reliability.
+        </p>
+      </div>
+
+      <figure class="gp-photo gp-photo--wide">
+        <img src="images/new.ownership.JPG"
+             alt="GP Supply & Lumber ownership"
+             loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <div class="gp-divider"></div>
+
+    <!-- THEN & NOW -->
+    <div class="gp-section-head">
+      <h2>Then and now</h2>
+      <p>Nearly 90 years of continuity—through different eras, the same job.</p>
+    </div>
+
+    <div class="gp-story-grid">
+      <figure class="gp-story-card">
+        <img src="images/storefront-1937.png" alt="Storefront in 1937" loading="lazy">
+        <figcaption>1937</figcaption>
+      </figure>
+      <figure class="gp-story-card">
+        <img src="images/storefront-2025.JPG" alt="Storefront in 2025" loading="lazy">
+        <figcaption>2025</figcaption>
+      </figure>
+      <figure class="gp-story-card">
+        <img src="images/storefront-2026.JPG" alt="Storefront in 2026" loading="lazy">
+        <figcaption>2026</figcaption>
+      </figure>
+    </div>
+
+    <div class="gp-divider"></div>
+
+    <!-- CTA -->
+    <div class="gp-two-col">
+      <div class="gp-block">
+        <h2>A working store for working people</h2>
+        <p>
+          This isn’t a showroom. It’s a place where projects start and problems get solved.
+          Bring what you’ve got—we’ll help you match it.
+        </p>
+
+        <div style="display:flex; gap:.75rem; flex-wrap:wrap;">
+          <a class="gp-btn gp-btn--solid" href="services.html">Explore services</a>
+          <a class="gp-btn gp-btn--ghost gp-shop-instock" href="#">Shop In-Stock</a>
+        </div>
+      </div>
+
+      <figure class="gp-photo gp-photo--wide">
+        <img src="images/lumber.JPG" alt="Lumber and building materials" loading="lazy">
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="gp-footer">
+  <div class="gp-shell gp-footer-grid">
+    <div>
+      <div class="gp-footer-brand">GP Supply &amp; Lumber</div>
+      <div class="gp-footer-muted">Since 1937 · Loreauville, Louisiana</div>
+    </div>
+    <div class="gp-footer-muted">
+      <a class="gp-shop-instock" href="#">Shop In-Stock</a> ·
+      <a href="catalog.html">Catalog</a> ·
+      <a href="contact.html">Hours &amp; Map</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE CTA -->
+<nav class="gp-mobile-cta" aria-label="Quick actions">
+  <a class="gp-mobile-cta__btn gp-mobile-cta__btn--primary gp-shop-instock" href="#">Shop</a>
+  <a class="gp-mobile-cta__btn" href="tel:13372294224">Call</a>
+  <a class="gp-mobile-cta__btn" href="https://www.google.com/maps/dir/?api=1&destination=700+N+Main+St,+Loreauville,+LA+70552" target="_blank" rel="noopener">Directions</a>
+</nav>
+
+<!-- JS -->
+<script>
+  const IN_STOCK_URL = "https://gonsoulinpricesupplyandlumber-3048.paladinshop.com/Store";
+
+  document.querySelectorAll(".gp-shop-instock").forEach(a => {
+    a.href = IN_STOCK_URL;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  const toggle = document.querySelector('.gp-mobile-toggle');
+  const menu = document.querySelector('.gp-mobile-menu');
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.classList.toggle('open');
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
 </body>
 </html>
