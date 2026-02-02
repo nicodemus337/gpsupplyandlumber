@@ -769,3 +769,27 @@ img{ max-width:100%; display:block; }
 .gp-block .gp-btn--ghost:hover {
   background: rgba(44, 91, 44, 0.08);
 }
+/* ==================================================
+   BUTTON CONTRAST FIX — FORCE VISIBILITY
+   (Last rule wins. No layout impact.)
+================================================== */
+
+.gp-btn--solid {
+  background: #2c5b2c !important;
+  color: #ffffff !important;
+  border-color: #2c5b2c !important;
+}
+
+.gp-btn--solid:hover {
+  background: #1f4520 !important;
+  border-color: #1f4520 !important;
+}
+
+.gp-btn--ghost {
+  color: #2c5b2c !important;
+  border-color: #2c5b2c !important;
+}
+
+.gp-btn--ghost:hover {
+  background: rgba(44, 91, 44, 0.08) !important;
+}
