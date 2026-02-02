@@ -247,3 +247,127 @@ h2, h3 {
     flex-direction: column;
   }
 }
+/* =========================================================
+   GP HEADER — RESTORE ORIGINAL LAYOUT
+   (Fixes broken alignment from reset)
+========================================================= */
+
+/* Header container */
+.gp-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 0.75rem 0;
+  background: transparent;
+}
+
+/* Interior pages */
+.gp-header--solid {
+  position: sticky;
+  top: 0;
+  background: #111;
+  padding: 0.65rem 0;
+}
+
+/* Nav row */
+.gp-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Brand block */
+.gp-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  color: rgba(255,255,255,0.95);
+}
+
+.gp-logo {
+  width: 56px;
+  height: auto;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.25));
+}
+
+.gp-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.gp-brand-name {
+  font-weight: 950;
+  letter-spacing: 0.01em;
+}
+
+.gp-brand-since {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.desktop-nav a {
+  color: rgba(255,255,255,0.92);
+  font-weight: 900;
+  padding: 0.35rem 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a[aria-current="page"] {
+  border-bottom-color: rgba(255,255,255,0.85);
+}
+
+/* Nav CTA — keep readable */
+.gp-nav-cta {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.gp-nav-cta:hover {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.75);
+}
+
+/* Mobile toggle */
+.gp-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.gp-mobile-toggle span {
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Mobile behavior */
+@media (max-width: 860px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .gp-mobile-toggle {
+    display: flex;
+  }
+}
