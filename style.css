@@ -734,3 +734,38 @@ img{ max-width:100%; display:block; }
 
 /* Prevent scroll behind modal */
 .gp-no-scroll{ overflow:hidden; }
+
+/* ==================================================
+   BUTTON CONTRAST FIX (LIGHT BACKGROUNDS ONLY)
+   Surgical override — does NOT affect hero/header
+================================================== */
+
+/* Any button inside normal page content */
+.gp-page .gp-btn,
+.gp-block .gp-btn,
+.gp-cta-band .gp-btn {
+  background: #2c5b2c;            /* solid brand green */
+  color: #fff;                    /* high contrast text */
+  border-color: #2c5b2c;
+}
+
+/* Hover state */
+.gp-page .gp-btn:hover,
+.gp-block .gp-btn:hover,
+.gp-cta-band .gp-btn:hover {
+  background: #1f4520;
+  border-color: #1f4520;
+}
+
+/* Ghost buttons stay secondary but visible */
+.gp-page .gp-btn--ghost,
+.gp-block .gp-btn--ghost {
+  background: transparent;
+  color: #2c5b2c;
+  border-color: #2c5b2c;
+}
+
+.gp-page .gp-btn--ghost:hover,
+.gp-block .gp-btn--ghost:hover {
+  background: rgba(44, 91, 44, 0.08);
+}
