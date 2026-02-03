@@ -130,8 +130,41 @@
       </div>
 
       <div class="gp-aisle-grid">
-        <!-- thumbnails unchanged; lightbox JS below -->
-        <!-- keep your existing buttons/images here -->
+        <button class="gp-aisle-thumb" type="button"
+                data-full="images/aisle.blades.JPG"
+                data-caption="Blades and cutting accessories aisle">
+          <img src="images/aisle.blades.JPG" alt="Blades and cutting accessories aisle" loading="lazy" decoding="async">
+        </button>
+
+        <button class="gp-aisle-thumb" type="button"
+                data-full="images/aisle.tools.jpg"
+                data-caption="Tools aisle with power tools and accessories">
+          <img src="images/aisle.tools.jpg" alt="Tools aisle with power tools and accessories" loading="lazy" decoding="async">
+        </button>
+
+        <button class="gp-aisle-thumb" type="button"
+                data-full="images/aisle.blue.JPG"
+                data-caption="Aisle of stocked hardware in blue bay">
+          <img src="images/aisle.blue.JPG" alt="Aisle of stocked hardware in blue bay" loading="lazy" decoding="async">
+        </button>
+
+        <button class="gp-aisle-thumb" type="button"
+                data-full="images/aisle.green.JPG"
+                data-caption="Aisle with fasteners and fix-it inventory">
+          <img src="images/aisle.green.JPG" alt="Aisle with fasteners and fix-it inventory" loading="lazy" decoding="async">
+        </button>
+
+        <button class="gp-aisle-thumb" type="button"
+                data-full="images/aisle.packs.JPG"
+                data-caption="Aisle of stocked packs and sealed items">
+          <img src="images/aisle.packs.JPG" alt="Aisle of stocked packs and sealed items" loading="lazy" decoding="async">
+        </button>
+
+        <button class="gp-aisle-thumb" type="button"
+                data-full="images/aisle.yellow.JPG"
+                data-caption="Aisle with jobsite essentials and daily supplies">
+          <img src="images/aisle.yellow.JPG" alt="Aisle with jobsite essentials and daily supplies" loading="lazy" decoding="async">
+        </button>
       </div>
     </section>
 
@@ -194,6 +227,54 @@
     const open = toggle.classList.toggle('open');
     menu.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', open);
+  });
+
+  const aisleButtons = document.querySelectorAll('.gp-aisle-thumb');
+  let aisleLightbox = null;
+
+  const closeAisleLightbox = () => {
+    if (!aisleLightbox) return;
+    aisleLightbox.remove();
+    aisleLightbox = null;
+    document.body.classList.remove('gp-no-scroll');
+    document.removeEventListener('keydown', onAisleKey);
+  };
+
+  const onAisleKey = (event) => {
+    if (event.key === 'Escape') closeAisleLightbox();
+  };
+
+  aisleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const img = btn.querySelector('img');
+      const src = btn.dataset.full || img?.src;
+      const caption = btn.dataset.caption || img?.alt || '';
+
+      if (!src) return;
+
+      aisleLightbox = document.createElement('div');
+      aisleLightbox.className = 'gp-aisle-lightbox';
+      aisleLightbox.setAttribute('role', 'dialog');
+      aisleLightbox.setAttribute('aria-modal', 'true');
+      aisleLightbox.innerHTML = `
+        <div class="gp-aisle-backdrop" data-close="true"></div>
+        <div class="gp-aisle-panel" role="document">
+          <button class="gp-aisle-close" type="button" aria-label="Close photo">Close</button>
+          <img class="gp-aisle-full" src="${src}" alt="${caption}">
+          <div class="gp-aisle-caption">${caption}</div>
+        </div>
+      `;
+
+      document.body.appendChild(aisleLightbox);
+      document.body.classList.add('gp-no-scroll');
+      document.addEventListener('keydown', onAisleKey);
+
+      aisleLightbox.addEventListener('click', (event) => {
+        if (event.target.closest('.gp-aisle-close') || event.target.dataset.close) {
+          closeAisleLightbox();
+        }
+      });
+    });
   });
 </script>
 
