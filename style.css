@@ -243,6 +243,21 @@ img{ max-width:100%; display:block; }
   border-color: rgba(255,255,255,.46);
 }
 
+/* Make CTA pair match (hero + visit sections) */
+.gp-hero .gp-btn,
+.gp-visit .gp-btn {
+  background: #1f4520;
+  color: #ffffff;
+  border-color: #1f4520;
+}
+.gp-hero .gp-btn:hover,
+.gp-visit .gp-btn:hover,
+.gp-hero .gp-btn:focus-visible,
+.gp-visit .gp-btn:focus-visible {
+  background: #295b2a;
+  border-color: #295b2a;
+}
+
 .gp-quick-facts{
   display:flex;
   flex-wrap: wrap;
