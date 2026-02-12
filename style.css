@@ -840,3 +840,44 @@ img{ max-width:100%; display:block; }
     text-align: center;
   }
 }
+
+/* ==================================================
+   CATALOG LINK VISIBILITY BOOST
+================================================== */
+
+/* Make catalog buttons stand out on dark + light areas */
+.gp-btn.gp-shop-catalog {
+  background: rgba(44, 91, 44, 0.28) !important;
+  border-color: rgba(44, 91, 44, 0.9) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+}
+.gp-btn.gp-shop-catalog:hover,
+.gp-btn.gp-shop-catalog:focus-visible {
+  background: rgba(44, 91, 44, 0.38) !important;
+  border-color: #2c5b2c !important;
+}
+
+/* Make catalog text links easier to notice */
+a.gp-shop-catalog:not(.gp-btn) {
+  font-weight: 1000;
+  color: #1f4520;
+  border-bottom: 2px solid rgba(44, 91, 44, 0.6);
+  padding-bottom: 2px;
+}
+a.gp-shop-catalog:not(.gp-btn):hover,
+a.gp-shop-catalog:not(.gp-btn):focus-visible {
+  color: #1f4520;
+  border-bottom-color: #1f4520;
+}
+
+/* Keep catalog link visible in the dark footer */
+.gp-footer a.gp-shop-catalog {
+  color: rgba(255, 255, 255, 0.98);
+  border-bottom-color: rgba(255, 255, 255, 0.85);
+}
+.gp-footer a.gp-shop-catalog:hover,
+.gp-footer a.gp-shop-catalog:focus-visible {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
