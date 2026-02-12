@@ -862,20 +862,20 @@ img{ max-width:100%; display:block; }
 
 /* Make catalog buttons stand out on dark + light areas */
 .gp-btn.gp-shop-catalog {
-  background: rgba(44, 91, 44, 0.28) !important;
-  border-color: rgba(44, 91, 44, 0.9) !important;
+  background: #1f4520 !important;
+  border-color: #1f4520 !important;
   color: #ffffff !important;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
 }
 .gp-btn.gp-shop-catalog:hover,
 .gp-btn.gp-shop-catalog:focus-visible {
-  background: rgba(74, 140, 74, 0.38) !important;
-  border-color: #4a8c4a !important;
+  background: rgba(31, 69, 32, 0.78) !important;
+  border-color: rgba(31, 69, 32, 0.78) !important;
 }
 .gp-btn.gp-shop-catalog:active,
 .gp-btn.gp-shop-catalog[aria-pressed="true"] {
-  background: rgba(90, 165, 90, 0.42) !important;
-  border-color: #5aa55a !important;
+  background: rgba(31, 69, 32, 0.66) !important;
+  border-color: rgba(31, 69, 32, 0.66) !important;
   color: #ffffff !important;
 }
 
